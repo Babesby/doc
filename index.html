@@ -951,6 +951,1093 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
+
+
+    <style>
+        :root {
+            --primary: #9a70b5;
+            --primary-dark: #7a5294;
+            --primary-light: #c9a8da;
+            --secondary: #4ecdc4;
+            --dark: #2a2d3e;
+            --light: #f8f9fc;
+            --accent: #ff6b6b;
+            --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--light) 0%, #eef2f7 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .scholar-profile {
+            max-width: 1200px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(42, 45, 62, 0.15);
+            overflow: hidden;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .profile-header::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+        }
+
+        .researcher-info {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .avatar-container {
+            position: relative;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+            box-shadow: 0 8px 25px rgba(42, 45, 62, 0.25);
+        }
+
+        .avatar-placeholder {
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 52px;
+        }
+
+        .researcher-info h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .affiliation {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0 0 8px 0;
+            font-weight: 400;
+        }
+
+        .research-fields {
+            font-size: 16px;
+            color: var(--light);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 10px 0 0 0;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .metrics-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            min-width: 300px;
+            z-index: 2;
+        }
+
+        .metric-card {
+            flex: 1;
+            min-width: 130px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .metric-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.85);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Publication Charts */
+        .publication-charts {
+            display: flex;
+            gap: 30px;
+            padding: 40px;
+            background: var(--light);
+        }
+
+        .chart-container {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(42, 45, 62, 0.08);
+            transition: var(--transition);
+        }
+
+        .chart-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(42, 45, 62, 0.15);
+        }
+
+        .chart-container h2 {
+            margin-top: 0;
+            font-size: 22px;
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .chart-container h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .chart {
+            height: 250px;
+            background: var(--light);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            padding: 0 20px;
+        }
+
+        .chart-bar {
+            width: 40px;
+            background: linear-gradient(to top, var(--primary), var(--primary-light));
+            border-radius: 6px 6px 0 0;
+            position: relative;
+            transition: height 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .chart-bar:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .chart-bar::after {
+            content: attr(data-year);
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .chart-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        /* Publications Filter */
+        .publications-section {
+            padding: 40px;
+            background: white;
+        }
+
+        .publications-section h2 {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .filter-option {
+            padding: 10px 25px;
+            background: var(--light);
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid var(--light);
+            font-weight: 500;
+        }
+
+        .filter-option.active, .filter-option:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .journal-select {
+            margin-left: auto;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 2px solid var(--light);
+            background: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: var(--dark);
+            font-weight: 500;
+            min-width: 200px;
+            transition: var(--transition);
+        }
+
+        .journal-select:hover {
+            border-color: var(--primary-light);
+        }
+
+        .journal-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(154, 112, 181, 0.2);
+        }
+
+        .publications-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 25px;
+        }
+
+        .publication-card {
+            background: var(--light);
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(42, 45, 62, 0.08);
+            border: 2px solid transparent;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .publication-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--secondary);
+        }
+
+        .publication-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(42, 45, 62, 0.15);
+            border-color: rgba(154, 112, 181, 0.2);
+        }
+
+        .pub-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pub-badge {
+            background: linear-gradient(to right, var(--accent), #ff9a9e);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .pub-metrics {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        .citation-count {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .pub-title {
+            font-size: 20px;
+            margin: 0 0 10px 0;
+            color: var(--dark);
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .pub-authors {
+            color: var(--primary);
+            margin: 0 0 8px 0;
+            font-size: 16px;
+        }
+
+        .pub-journal {
+            color: var(--secondary);
+            font-weight: 500;
+            margin: 0 0 20px 0;
+            font-size: 15px;
+        }
+
+        .pub-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .abstract-toggle {
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        .abstract-toggle:hover {
+            color: var(--primary-dark);
+        }
+
+        .action-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .action-icons a {
+            color: var(--primary-light);
+            font-size: 18px;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(154, 112, 181, 0.1);
+        }
+
+        .action-icons a:hover {
+            color: white;
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .pub-abstract {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            color: var(--dark);
+            line-height: 1.7;
+            padding: 0 20px;
+            font-size: 15px;
+        }
+
+        .pub-abstract.expanded {
+            max-height: 500px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Coauthors Section */
+        .coauthors-section {
+            padding: 40px;
+            background: linear-gradient(135deg, var(--light) 0%, #eef2f7 100%);
+        }
+
+        .coauthors-section h2 {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .coauthors-container {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .coauthor {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 18px;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(42, 45, 62, 0.08);
+            border: 2px solid transparent;
+        }
+
+        .coauthor:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(42, 45, 62, 0.15);
+            border-color: rgba(154, 112, 181, 0.2);
+        }
+
+        .coauthor-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .coauthor-name {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .coauthor-pubs {
+            font-size: 15px;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        /* Profile Links Section */
+        .profile-links {
+            padding: 40px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+
+        .profile-links h2 {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .links-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .profile-link {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 18px;
+            text-decoration: none;
+            color: var(--dark);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .profile-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(42, 45, 62, 0.1);
+            border-color: var(--primary-light);
+        }
+
+        .link-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .link-text {
+            flex: 1;
+        }
+
+        .link-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+
+        .link-url {
+            font-size: 14px;
+            color: var(--primary);
+            word-break: break-all;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .publications-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+            
+            .researcher-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .metrics-container {
+                justify-content: center;
+            }
+            
+            .pub-header {
+                flex-direction: column;
+            }
+            
+            .publication-charts {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+            
+            .filter-controls {
+                flex-direction: column;
+            }
+            
+            .journal-select {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="scholar-profile">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="researcher-info">
+                <div class="avatar-container">
+                    <div class="avatar-placeholder">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1>Dr. Adelina Maria Mensah</h1>
+                    <p class="affiliation">Senior Research Fellow, Institute for Environment and Sanitation Studies</p>
+                    <p class="affiliation">University of Ghana, Legon</p>
+                    <p class="research-fields">Environmental Science • Sustainability • Climate Adaptation • Coastal Management</p>
+                </div>
+            </div>
+            
+            <div class="metrics-container">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="metric-value" id="citation-count">1,036</div>
+                    <div class="metric-label">Citations</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="metric-value" id="h-index">16</div>
+                    <div class="metric-label">h-index</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="metric-value" id="i10-index">21</div>
+                    <div class="metric-label">i10-index</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Publication Charts -->
+        <div class="publication-charts">
+            <div class="chart-container">
+                <h2>Publications by Year</h2>
+                <div class="chart" id="yearly-publications-chart"></div>
+            </div>
+            
+            <div class="chart-container">
+                <h2>Citation Impact</h2>
+                <div class="chart" id="citation-impact-chart"></div>
+            </div>
+        </div>
+        
+        <!-- Publications Section -->
+        <div class="publications-section">
+            <h2>Publications</h2>
+            <div class="filter-controls">
+                <div class="filter-option active" data-filter="all">All Publications</div>
+                <div class="filter-option" data-filter="last5">Last 5 Years</div>
+                <div class="filter-option" data-filter="highly-cited">Highly Cited</div>
+                <select class="journal-select" id="journal-filter">
+                    <option value="all">All Journals</option>
+                    <option value="sustainability">Sustainability</option>
+                    <option value="parasitology">Parasitology</option>
+                    <option value="ecology">Journal of Ecology</option>
+                    <option value="other">Other Journals</option>
+                </select>
+            </div>
+            
+            <div class="publications-list" id="publications-container">
+                <!-- Publication 1 -->
+                <div class="publication-card" data-year="2020" data-citations="128" data-journal="sustainability" data-highly-cited="true">
+                    <div class="pub-header">
+                        <div class="pub-badge">
+                            <i class="fas fa-star"></i> Highly Cited
+                        </div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">128 citations</span>
+                            <span class="pub-year">2020</span>
+                        </div>
+                    </div>
+                    <h3 class="pub-title">Urban-rural linkages and SDG interlinkages in Ghana</h3>
+                    <p class="pub-authors">Mensah, A.M., Okyere, S.A., Owusu, G., Kita, M.</p>
+                    <p class="pub-journal">Sustainability, 12(18), 7369</p>
+                    <div class="pub-actions">
+                        <button class="abstract-toggle">Show Abstract <i class="fas fa-chevron-down"></i></button>
+                        <div class="action-icons">
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#"><i class="fas fa-download"></i></a>
+                            <a href="#"><i class="fas fa-quote-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="pub-abstract">
+                        <p>This study examines the interlinkages between urban and rural areas in Ghana and their implications for achieving the Sustainable Development Goals (SDGs). We identify key leverage points where interventions can maximize co-benefits across multiple goals, particularly focusing on food systems, water resources, and infrastructure development. Our analysis reveals that integrated urban-rural planning is essential for achieving sustainable development in Ghana.</p>
+                    </div>
+                </div>
+                
+                <!-- Publication 2 -->
+                <div class="publication-card" data-year="2015" data-citations="97" data-journal="sustainability" data-highly-cited="true">
+                    <div class="pub-header">
+                        <div class="pub-badge">
+                            <i class="fas fa-trophy"></i> Most Cited
+                        </div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">97 citations</span>
+                            <span class="pub-year">2015</span>
+                        </div>
+                    </div>
+                    <h3 class="pub-title">Disaster risk reduction education in Ghanaian schools</h3>
+                    <p class="pub-authors">Apronti, P.T., Osamu, S., Otsuki, K., Mensah, A.M.</p>
+                    <p class="pub-journal">Sustainability, 7(9), 11999-12019</p>
+                    <div class="pub-actions">
+                        <button class="abstract-toggle">Show Abstract <i class="fas fa-chevron-down"></i></button>
+                        <div class="action-icons">
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#"><i class="fas fa-download"></i></a>
+                            <a href="#"><i class="fas fa-quote-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="pub-abstract">
+                        <p>This research evaluates the integration of disaster risk reduction (DRR) education in Ghanaian schools. Through surveys and curriculum analysis, we assess the current state of DRR education and identify gaps in knowledge dissemination. The study proposes a comprehensive framework for enhancing DRR education that incorporates local knowledge and community-based approaches.</p>
+                    </div>
+                </div>
+                
+                <!-- Publication 3 -->
+                <div class="publication-card" data-year="2016" data-citations="54" data-journal="ecology" data-highly-cited="false">
+                    <div class="pub-header">
+                        <div class="pub-metrics">
+                            <span class="citation-count">54 citations</span>
+                            <span class="pub-year">2016</span>
+                        </div>
+                    </div>
+                    <h3 class="pub-title">Community-based environmental education for migrant youth</h3>
+                    <p class="pub-authors">Mensah, A.M., Kuranchie, F.A.</p>
+                    <p class="pub-journal">Journal of Education and Learning, 5(4), 73-84</p>
+                    <div class="pub-actions">
+                        <button class="abstract-toggle">Show Abstract <i class="fas fa-chevron-down"></i></button>
+                        <div class="action-icons">
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#"><i class="fas fa-download"></i></a>
+                            <a href="#"><i class="fas fa-quote-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="pub-abstract">
+                        <p>This paper explores the effectiveness of community-based environmental education programs for migrant youth in Ghana. Using participatory action research, we demonstrate how culturally responsive environmental education can enhance ecological awareness and foster sustainable practices among vulnerable populations. The study highlights the importance of integrating local ecological knowledge with formal education approaches.</p>
+                    </div>
+                </div>
+                
+                <!-- Publication 4 -->
+                <div class="publication-card" data-year="2018" data-citations="42" data-journal="other" data-highly-cited="false">
+                    <div class="pub-header">
+                        <div class="pub-metrics">
+                            <span class="citation-count">42 citations</span>
+                            <span class="pub-year">2018</span>
+                        </div>
+                    </div>
+                    <h3 class="pub-title">Coastal vulnerability assessment in Ghana using GIS</h3>
+                    <p class="pub-authors">Mensah, A.M., Addo, K.A., Wiafe, G.</p>
+                    <p class="pub-journal">Ocean & Coastal Management, 156, 167-178</p>
+                    <div class="pub-actions">
+                        <button class="abstract-toggle">Show Abstract <i class="fas fa-chevron-down"></i></button>
+                        <div class="action-icons">
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#"><i class="fas fa-download"></i></a>
+                            <a href="#"><i class="fas fa-quote-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="pub-abstract">
+                        <p>This study develops a coastal vulnerability index (CVI) for Ghana's coastline using geographic information systems (GIS) and multi-criteria analysis. We integrate physical, ecological, and socio-economic parameters to identify hotspots of vulnerability to sea-level rise and coastal erosion. The research provides a decision-support tool for coastal zone management and climate adaptation planning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Coauthors Section -->
+        <div class="coauthors-section">
+            <h2>Frequent Collaborators</h2>
+            <div class="coauthors-container">
+                <div class="coauthor">
+                    <div class="coauthor-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="coauthor-info">
+                        <div class="coauthor-name">Prof. Kwasi Appeaning Addo</div>
+                        <div class="coauthor-pubs">8 joint publications</div>
+                    </div>
+                </div>
+                <div class="coauthor">
+                    <div class="coauthor-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="coauthor-info">
+                        <div class="coauthor-name">Dr. Petra T. Apronti</div>
+                        <div class="coauthor-pubs">6 joint publications</div>
+                    </div>
+                </div>
+                <div class="coauthor">
+                    <div class="coauthor-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="coauthor-info">
+                        <div class="coauthor-name">Dr. Samuel A. Okyere</div>
+                        <div class="coauthor-pubs">5 joint publications</div>
+                    </div>
+                </div>
+                <div class="coauthor">
+                    <div class="coauthor-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="coauthor-info">
+                        <div class="coauthor-name">Dr. George Owusu</div>
+                        <div class="coauthor-pubs">4 joint publications</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Profile Links Section -->
+        <div class="profile-links">
+            <h2>Academic Profiles</h2>
+            <div class="links-container">
+                <a href="https://www.researchgate.net/profile/Adelina-Mensah" class="profile-link" target="_blank">
+                    <div class="link-icon">
+                        <i class="fab fa-researchgate"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">ResearchGate Profile</div>
+                        <div class="link-url">https://www.researchgate.net/profile/Adelina-Mensah</div>
+                    </div>
+                </a>
+                
+                <a href="https://scholar.google.com/citations?user=wLG5P3IAAAAJ" class="profile-link" target="_blank">
+                    <div class="link-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Google Scholar Profile</div>
+                        <div class="link-url">https://scholar.google.com/citations?user=wLG5P3IAAAAJ</div>
+                    </div>
+                </a>
+                
+                <a href="https://ug-gh.academia.edu/AdelinaMensah" class="profile-link" target="_blank">
+                    <div class="link-icon">
+                        <i class="fab fa-academia"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Academia.edu Profile</div>
+                        <div class="link-url">https://ug-gh.academia.edu/AdelinaMensah</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize charts
+            initPublicationChart();
+            initCitationChart();
+            
+            // Set up abstract toggle functionality
+            const toggleButtons = document.querySelectorAll('.abstract-toggle');
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const abstract = this.closest('.publication-card').querySelector('.pub-abstract');
+                    abstract.classList.toggle('expanded');
+                    
+                    if (abstract.classList.contains('expanded')) {
+                        this.innerHTML = 'Hide Abstract <i class="fas fa-chevron-up"></i>';
+                    } else {
+                        this.innerHTML = 'Show Abstract <i class="fas fa-chevron-down"></i>';
+                    }
+                });
+            });
+            
+            // Set up filter options
+            const filterOptions = document.querySelectorAll('.filter-option');
+            const journalSelect = document.getElementById('journal-filter');
+            const publications = document.querySelectorAll('.publication-card');
+            const currentYear = new Date().getFullYear();
+            
+            // Publication filtering function
+            function filterPublications() {
+                const activeFilter = document.querySelector('.filter-option.active').dataset.filter;
+                const journalFilter = journalSelect.value;
+                
+                publications.forEach(pub => {
+                    const pubYear = parseInt(pub.dataset.year);
+                    const isHighlyCited = pub.dataset.highlyCited === 'true';
+                    const pubJournal = pub.dataset.journal;
+                    
+                    let show = true;
+                    
+                    // Apply filter based on selected option
+                    if (activeFilter === 'last5' && pubYear < currentYear - 4) {
+                        show = false;
+                    } else if (activeFilter === 'highly-cited' && !isHighlyCited) {
+                        show = false;
+                    }
+                    
+                    // Apply journal filter
+                    if (journalFilter !== 'all' && pubJournal !== journalFilter) {
+                        show = false;
+                    }
+                    
+                    // Toggle visibility
+                    if (show) {
+                        pub.style.display = 'block';
+                        setTimeout(() => {
+                            pub.style.opacity = '1';
+                        }, 50);
+                    } else {
+                        pub.style.opacity = '0';
+                        setTimeout(() => {
+                            pub.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+            
+            // Add event listeners to filter buttons
+            filterOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    filterOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    filterPublications();
+                });
+            });
+            
+            // Add event listener to journal select
+            journalSelect.addEventListener('change', filterPublications);
+            
+            // Animate metrics counting up
+            animateValue('citation-count', 0, 1036, 2000);
+            animateValue('h-index', 0, 16, 1500);
+            animateValue('i10-index', 0, 21, 1800);
+        });
+        
+        function initPublicationChart() {
+            const chart = document.getElementById('yearly-publications-chart');
+            const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
+            const pubs = [2, 4, 3, 5, 6, 4, 7, 5];
+            
+            // Clear any existing content
+            chart.innerHTML = '';
+            
+            // Find max value for scaling
+            const maxPubs = Math.max(...pubs);
+            
+            // Create bars
+            years.forEach((year, i) => {
+                const bar = document.createElement('div');
+                bar.className = 'chart-bar';
+                bar.style.height = `${(pubs[i] / maxPubs) * 90}%`;
+                bar.setAttribute('data-year', year);
+                
+                // Add value label at top of bar
+                const valueLabel = document.createElement('div');
+                valueLabel.className = 'chart-value';
+                valueLabel.textContent = pubs[i];
+                
+                bar.appendChild(valueLabel);
+                chart.appendChild(bar);
+                
+                // Animate in
+                setTimeout(() => {
+                    bar.style.height = `${(pubs[i] / maxPubs) * 90}%`;
+                }, i * 150);
+            });
+        }
+        
+        function initCitationChart() {
+            const chart = document.getElementById('citation-impact-chart');
+            const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
+            const citations = [80, 120, 95, 150, 180, 200, 220, 110];
+            
+            // Clear any existing content
+            chart.innerHTML = '';
+            
+            // Find max value for scaling
+            const maxCitations = Math.max(...citations);
+            
+            // Create bars
+            years.forEach((year, i) => {
+                const bar = document.createElement('div');
+                bar.className = 'chart-bar';
+                bar.style.height = '0%';
+                bar.style.background = 'linear-gradient(to top, var(--secondary), #8de9e4)';
+                bar.setAttribute('data-year', year);
+                
+                // Add value label at top of bar
+                const valueLabel = document.createElement('div');
+                valueLabel.className = 'chart-value';
+                valueLabel.textContent = citations[i];
+                
+                bar.appendChild(valueLabel);
+                chart.appendChild(bar);
+                
+                // Animate in
+                setTimeout(() => {
+                    bar.style.height = `${(citations[i] / maxCitations) * 90}%`;
+                }, i * 150);
+            });
+        }
+        
+        function animateValue(id, start, end, duration) {
+            const element = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+    </script>
+
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2>Let's Collaborate</h2>
