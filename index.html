@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <link rel="stylesheet" href="whatsapx.css">
+      <link rel="icon" type="image/svg+xml" href="DR.png">
    
     <style>
     
@@ -721,6 +723,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#expertise">Expertise</a></li>
+                 <li><a href="publi.html">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -732,7 +735,6 @@
         <!-- Mobile slides (will be removed on desktop) -->
         <div class="carousel-slide slide-mobile" data-image="b.JPG"></div>
         <div class="carousel-slide slide-mobile" data-image="e.JPG"></div>
-        <div class="carousel-slide slide-mobile" data-image="f.JPG"></div>
         <div class="carousel-slide slide-mobile" data-image="j.JPG"></div>
         <div class="carousel-slide slide-mobile" data-image="l.JPG"></div>
         <div class="carousel-slide slide-mobile" data-image="i.JPG"></div>
@@ -1612,431 +1614,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </style>
 </head>
 <body>
-    <section class="scholar-profile">
-        <!-- Profile Header -->
-        <div class="profile-header">
-            <div class="researcher-info">
-                <div class="avatar-container">
-                    <div class="avatar-placeholder">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                </div>
-                <div>
-                    <h1>Dr. Adelina Maria Mensah</h1>
-                    <p class="affiliation">Senior Research Fellow, Institute for Environment and Sanitation Studies</p>
-                    <p class="affiliation">University of Ghana, Legon</p>
-                    <p class="research-fields">Environmental Science • Sustainability • Climate Adaptation • Coastal Management</p>
-                </div>
-            </div>
-            
-            <div class="metrics-container">
-                <div class="metric-card">
-                    <div class="metric-icon">
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <div class="metric-value" id="citation-count">1,036</div>
-                    <div class="metric-label">Citations</div>
-                </div>
-                
-                <div class="metric-card">
-                    <div class="metric-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="metric-value" id="h-index">16</div>
-                    <div class="metric-label">h-index</div>
-                </div>
-                
-                <div class="metric-card">
-                    <div class="metric-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="metric-value" id="i10-index">21</div>
-                    <div class="metric-label">i10-index</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Publication Charts -->
-        <div class="publication-charts">
-            <div class="chart-container">
-                <h2>Publications by Year</h2>
-                <div class="chart" id="yearly-publications-chart"></div>
-            </div>
-            
-            <div class="chart-container">
-                <h2>Citation Impact</h2>
-                <div class="chart" id="citation-impact-chart"></div>
-            </div>
-        </div>
-        
-        <!-- Publications Section -->
-        <div class="publications-section">
-            <h2>Publications</h2>
-            <div class="filter-controls">
-                <div class="filter-option active" data-filter="all">All Publications</div>
-                <div class="filter-option" data-filter="last5">Last 5 Years</div>
-                <div class="filter-option" data-filter="highly-cited">Highly Cited</div>
-                <select class="journal-select" id="journal-filter">
-                    <option value="all">All Journals</option>
-                    <option value="sustainability">Sustainability</option>
-                    <option value="parasitology">Parasitology</option>
-                    <option value="ecology">Journal of Ecology</option>
-                    <option value="other">Other Journals</option>
-                </select>
-            </div>
-            
-            <div class="publications-list" id="publications-container">
-                <!-- Publication 1 -->
-                <div class="publication-card" data-year="2020" data-citations="128" data-journal="sustainability" data-highly-cited="true">
-                    <div class="pub-header">
-                        <div class="pub-badge">
-                            <i class="fas fa-star"></i> Highly Cited
-                        </div>
-                        <div class="pub-metrics">
-                            <span class="citation-count">128 citations</span>
-                            <span class="pub-year">2020</span>
-                        </div>
-                    </div>
-                    <h3 class="pub-title">Urban-rural linkages and SDG interlinkages in Ghana</h3>
-                    <p class="pub-authors">Mensah, A.M., Okyere, S.A., Owusu, G., Kita, M.</p>
-                    <p class="pub-journal">Sustainability, 12(18), 7369</p>
-                    <div class="pub-actions">
-                        <button class="abstract-toggle">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                        <div class="action-icons">
-                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#"><i class="fas fa-download"></i></a>
-                            <a href="#"><i class="fas fa-quote-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="pub-abstract">
-                        <p>This study examines the interlinkages between urban and rural areas in Ghana and their implications for achieving the Sustainable Development Goals (SDGs). We identify key leverage points where interventions can maximize co-benefits across multiple goals, particularly focusing on food systems, water resources, and infrastructure development. Our analysis reveals that integrated urban-rural planning is essential for achieving sustainable development in Ghana.</p>
-                    </div>
-                </div>
-                
-                <!-- Publication 2 -->
-                <div class="publication-card" data-year="2015" data-citations="97" data-journal="sustainability" data-highly-cited="true">
-                    <div class="pub-header">
-                        <div class="pub-badge">
-                            <i class="fas fa-trophy"></i> Most Cited
-                        </div>
-                        <div class="pub-metrics">
-                            <span class="citation-count">97 citations</span>
-                            <span class="pub-year">2015</span>
-                        </div>
-                    </div>
-                    <h3 class="pub-title">Disaster risk reduction education in Ghanaian schools</h3>
-                    <p class="pub-authors">Apronti, P.T., Osamu, S., Otsuki, K., Mensah, A.M.</p>
-                    <p class="pub-journal">Sustainability, 7(9), 11999-12019</p>
-                    <div class="pub-actions">
-                        <button class="abstract-toggle">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                        <div class="action-icons">
-                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#"><i class="fas fa-download"></i></a>
-                            <a href="#"><i class="fas fa-quote-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="pub-abstract">
-                        <p>This research evaluates the integration of disaster risk reduction (DRR) education in Ghanaian schools. Through surveys and curriculum analysis, we assess the current state of DRR education and identify gaps in knowledge dissemination. The study proposes a comprehensive framework for enhancing DRR education that incorporates local knowledge and community-based approaches.</p>
-                    </div>
-                </div>
-                
-                <!-- Publication 3 -->
-                <div class="publication-card" data-year="2016" data-citations="54" data-journal="ecology" data-highly-cited="false">
-                    <div class="pub-header">
-                        <div class="pub-metrics">
-                            <span class="citation-count">54 citations</span>
-                            <span class="pub-year">2016</span>
-                        </div>
-                    </div>
-                    <h3 class="pub-title">Community-based environmental education for migrant youth</h3>
-                    <p class="pub-authors">Mensah, A.M., Kuranchie, F.A.</p>
-                    <p class="pub-journal">Journal of Education and Learning, 5(4), 73-84</p>
-                    <div class="pub-actions">
-                        <button class="abstract-toggle">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                        <div class="action-icons">
-                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#"><i class="fas fa-download"></i></a>
-                            <a href="#"><i class="fas fa-quote-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="pub-abstract">
-                        <p>This paper explores the effectiveness of community-based environmental education programs for migrant youth in Ghana. Using participatory action research, we demonstrate how culturally responsive environmental education can enhance ecological awareness and foster sustainable practices among vulnerable populations. The study highlights the importance of integrating local ecological knowledge with formal education approaches.</p>
-                    </div>
-                </div>
-                
-                <!-- Publication 4 -->
-                <div class="publication-card" data-year="2018" data-citations="42" data-journal="other" data-highly-cited="false">
-                    <div class="pub-header">
-                        <div class="pub-metrics">
-                            <span class="citation-count">42 citations</span>
-                            <span class="pub-year">2018</span>
-                        </div>
-                    </div>
-                    <h3 class="pub-title">Coastal vulnerability assessment in Ghana using GIS</h3>
-                    <p class="pub-authors">Mensah, A.M., Addo, K.A., Wiafe, G.</p>
-                    <p class="pub-journal">Ocean & Coastal Management, 156, 167-178</p>
-                    <div class="pub-actions">
-                        <button class="abstract-toggle">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                        <div class="action-icons">
-                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#"><i class="fas fa-download"></i></a>
-                            <a href="#"><i class="fas fa-quote-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="pub-abstract">
-                        <p>This study develops a coastal vulnerability index (CVI) for Ghana's coastline using geographic information systems (GIS) and multi-criteria analysis. We integrate physical, ecological, and socio-economic parameters to identify hotspots of vulnerability to sea-level rise and coastal erosion. The research provides a decision-support tool for coastal zone management and climate adaptation planning.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Coauthors Section -->
-        <div class="coauthors-section">
-            <h2>Frequent Collaborators</h2>
-            <div class="coauthors-container">
-                <div class="coauthor">
-                    <div class="coauthor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="coauthor-info">
-                        <div class="coauthor-name">Prof. Kwasi Appeaning Addo</div>
-                        <div class="coauthor-pubs">8 joint publications</div>
-                    </div>
-                </div>
-                <div class="coauthor">
-                    <div class="coauthor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="coauthor-info">
-                        <div class="coauthor-name">Dr. Petra T. Apronti</div>
-                        <div class="coauthor-pubs">6 joint publications</div>
-                    </div>
-                </div>
-                <div class="coauthor">
-                    <div class="coauthor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="coauthor-info">
-                        <div class="coauthor-name">Dr. Samuel A. Okyere</div>
-                        <div class="coauthor-pubs">5 joint publications</div>
-                    </div>
-                </div>
-                <div class="coauthor">
-                    <div class="coauthor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="coauthor-info">
-                        <div class="coauthor-name">Dr. George Owusu</div>
-                        <div class="coauthor-pubs">4 joint publications</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Profile Links Section -->
-        <div class="profile-links">
-            <h2>Academic Profiles</h2>
-            <div class="links-container">
-                <a href="https://www.researchgate.net/profile/Adelina-Mensah" class="profile-link" target="_blank">
-                    <div class="link-icon">
-                        <i class="fab fa-researchgate"></i>
-                    </div>
-                    <div class="link-text">
-                        <div class="link-title">ResearchGate Profile</div>
-                        <div class="link-url">https://www.researchgate.net/profile/Adelina-Mensah</div>
-                    </div>
-                </a>
-                
-                <a href="https://scholar.google.com/citations?user=wLG5P3IAAAAJ" class="profile-link" target="_blank">
-                    <div class="link-icon">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <div class="link-text">
-                        <div class="link-title">Google Scholar Profile</div>
-                        <div class="link-url">https://scholar.google.com/citations?user=wLG5P3IAAAAJ</div>
-                    </div>
-                </a>
-                
-                <a href="https://ug-gh.academia.edu/AdelinaMensah" class="profile-link" target="_blank">
-                    <div class="link-icon">
-                        <i class="fab fa-academia"></i>
-                    </div>
-                    <div class="link-text">
-                        <div class="link-title">Academia.edu Profile</div>
-                        <div class="link-url">https://ug-gh.academia.edu/AdelinaMensah</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize charts
-            initPublicationChart();
-            initCitationChart();
-            
-            // Set up abstract toggle functionality
-            const toggleButtons = document.querySelectorAll('.abstract-toggle');
-            toggleButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const abstract = this.closest('.publication-card').querySelector('.pub-abstract');
-                    abstract.classList.toggle('expanded');
-                    
-                    if (abstract.classList.contains('expanded')) {
-                        this.innerHTML = 'Hide Abstract <i class="fas fa-chevron-up"></i>';
-                    } else {
-                        this.innerHTML = 'Show Abstract <i class="fas fa-chevron-down"></i>';
-                    }
-                });
-            });
-            
-            // Set up filter options
-            const filterOptions = document.querySelectorAll('.filter-option');
-            const journalSelect = document.getElementById('journal-filter');
-            const publications = document.querySelectorAll('.publication-card');
-            const currentYear = new Date().getFullYear();
-            
-            // Publication filtering function
-            function filterPublications() {
-                const activeFilter = document.querySelector('.filter-option.active').dataset.filter;
-                const journalFilter = journalSelect.value;
-                
-                publications.forEach(pub => {
-                    const pubYear = parseInt(pub.dataset.year);
-                    const isHighlyCited = pub.dataset.highlyCited === 'true';
-                    const pubJournal = pub.dataset.journal;
-                    
-                    let show = true;
-                    
-                    // Apply filter based on selected option
-                    if (activeFilter === 'last5' && pubYear < currentYear - 4) {
-                        show = false;
-                    } else if (activeFilter === 'highly-cited' && !isHighlyCited) {
-                        show = false;
-                    }
-                    
-                    // Apply journal filter
-                    if (journalFilter !== 'all' && pubJournal !== journalFilter) {
-                        show = false;
-                    }
-                    
-                    // Toggle visibility
-                    if (show) {
-                        pub.style.display = 'block';
-                        setTimeout(() => {
-                            pub.style.opacity = '1';
-                        }, 50);
-                    } else {
-                        pub.style.opacity = '0';
-                        setTimeout(() => {
-                            pub.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            }
-            
-            // Add event listeners to filter buttons
-            filterOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    filterOptions.forEach(opt => opt.classList.remove('active'));
-                    this.classList.add('active');
-                    filterPublications();
-                });
-            });
-            
-            // Add event listener to journal select
-            journalSelect.addEventListener('change', filterPublications);
-            
-            // Animate metrics counting up
-            animateValue('citation-count', 0, 1036, 2000);
-            animateValue('h-index', 0, 16, 1500);
-            animateValue('i10-index', 0, 21, 1800);
-        });
-        
-        function initPublicationChart() {
-            const chart = document.getElementById('yearly-publications-chart');
-            const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
-            const pubs = [2, 4, 3, 5, 6, 4, 7, 5];
-            
-            // Clear any existing content
-            chart.innerHTML = '';
-            
-            // Find max value for scaling
-            const maxPubs = Math.max(...pubs);
-            
-            // Create bars
-            years.forEach((year, i) => {
-                const bar = document.createElement('div');
-                bar.className = 'chart-bar';
-                bar.style.height = `${(pubs[i] / maxPubs) * 90}%`;
-                bar.setAttribute('data-year', year);
-                
-                // Add value label at top of bar
-                const valueLabel = document.createElement('div');
-                valueLabel.className = 'chart-value';
-                valueLabel.textContent = pubs[i];
-                
-                bar.appendChild(valueLabel);
-                chart.appendChild(bar);
-                
-                // Animate in
-                setTimeout(() => {
-                    bar.style.height = `${(pubs[i] / maxPubs) * 90}%`;
-                }, i * 150);
-            });
-        }
-        
-        function initCitationChart() {
-            const chart = document.getElementById('citation-impact-chart');
-            const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
-            const citations = [80, 120, 95, 150, 180, 200, 220, 110];
-            
-            // Clear any existing content
-            chart.innerHTML = '';
-            
-            // Find max value for scaling
-            const maxCitations = Math.max(...citations);
-            
-            // Create bars
-            years.forEach((year, i) => {
-                const bar = document.createElement('div');
-                bar.className = 'chart-bar';
-                bar.style.height = '0%';
-                bar.style.background = 'linear-gradient(to top, var(--secondary), #8de9e4)';
-                bar.setAttribute('data-year', year);
-                
-                // Add value label at top of bar
-                const valueLabel = document.createElement('div');
-                valueLabel.className = 'chart-value';
-                valueLabel.textContent = citations[i];
-                
-                bar.appendChild(valueLabel);
-                chart.appendChild(bar);
-                
-                // Animate in
-                setTimeout(() => {
-                    bar.style.height = `${(citations[i] / maxCitations) * 90}%`;
-                }, i * 150);
-            });
-        }
-        
-        function animateValue(id, start, end, duration) {
-            const element = document.getElementById(id);
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                element.textContent = value.toLocaleString();
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-    </script>
-
+   
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -2057,6 +1635,60 @@ document.addEventListener('DOMContentLoaded', function() {
             </a>
         </div>
     </section>
+
+         <!-- WhatsApp Floating Button -->
+    <button class="whatsapp-float" id="whatsappButton">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+        </svg>
+    </button>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-chat" id="whatsappChat">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">
+                    <img src="e.JPG" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center;  background: white!important; font-weight: bold;">OT</div>
+                </div>
+                <div>
+                    <h3 class="chat-title">Dr. Adelina Mensah</h3>
+                    <p class="chat-subtitle" style="color:#f7f7f7!important">Replies within 24 hours</p>
+                </div>
+            </div>
+            <button class="close-btn" id="closeChat">×</button>
+        </div>
+        
+        <div class="chat-body">
+            <div class="chat-time">Today</div>
+            
+            <div class="message received">
+                <div class="message-bubble">
+                    Hi there, welcome to my page, book an appointment with me.
+                </div>
+                <div class="message-time">16:23</div>
+            </div>
+            
+        </div>
+        
+        <div class="chat-footer">
+            <div class="message-input-container">
+                <textarea 
+                    class="message-input" 
+                    id="messageInput" 
+                    placeholder="Type a message..."
+                    rows="1"
+                ></textarea>
+                <button class="send-btn" id="sendBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                    </svg>
+                </button>
+            </div>
+         
+        </div>
+    </div>
+    <script src="whatsapp.js"></script>
 
     <!-- Footer -->
     <footer>
