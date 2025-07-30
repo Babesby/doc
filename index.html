@@ -8,9 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Poppins -->
+     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
       <link rel="stylesheet" href="whatsapx.css">
       <link rel="icon" type="image/svg+xml" href="DR.png">
+      <!-- Favicons -->
+
+
+
+
    
     <style>
     
@@ -127,6 +136,15 @@
         }
 
         /* Enhanced Hero Section with 10 Animation Styles */
+       #typed {
+  font-family: 'Satisfy', cursive;
+  font-size: 2.2rem;
+  font-weight: normal;
+  line-height: 1.1;
+  color: #222; /* Adjust to match your theme */
+}
+
+
         .hero {
             height: 100vh;
         
@@ -166,7 +184,8 @@
         }
         }
 
-        
+
+
   .hero-content {
             text-align: center;
             z-index: 2;
@@ -249,7 +268,21 @@
             color: var(--primary);
         }
 
-     
+     @media (min-width: 1000px) {
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    transform: translate(-50%, -50%); /* Centers it properly */
+    padding: 1rem;
+    border-radius: 30px;
+    z-index: 5;
+    background-color: rgba(235, 217, 244, 0.8); /* Fixed opacity */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 80%;
+  }
+}
 
 .carousel-slide.active {
     opacity: 1;
@@ -392,7 +425,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(122, 82, 148, 0.3);
-            height: 500px;
+            height: 700px;
         }
 
         .about-image img {
@@ -709,12 +742,17 @@
                 margin-left: 0;
             }
         }
+        
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <a href="#" class="logo">Dr. <span>Mensah</span></a>
+        <div id="logo" class="logo">
+        <h1><a href="#" class="logo"><img src="logo.svg" alt="" title="" /></a></h1>
+      </div>
+      <div class="hero-text animated fadeInDownBig"> <a href="#">
+        
         <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
@@ -744,18 +782,20 @@
         <div class="carousel-slide slide-desktop" data-image="d.JPG"></div>
         
     </div>
-    
-    <div class="hero-content"> 
+      <div class="hero-content" > 
         <div class="hero-text">
-            <h1>Dr. Adelina <span>(Maria) Mensah</span></h1>
+            <h1 style="font-size: 60px" class="typed-text" id="typed"></span></h1>
             <div class="btn-container">
                 <a href="#contact" class="btn">        
-                    <div class="typed-text" id="typed"></div>
+                    <div>Dr. Adelina</div>
                 </a>
             </div>
         </div>
     </div>
+    
+  
 </section>
+
 
     <style>     
 .carousel-slide {
@@ -869,7 +909,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="about-content">
             <div class="about-image">
-                <img src="a.JPG" alt="Dr. Adelina Mensah">
+                <img src="ax.jpg" alt="Dr. Adelina Mensah">
             </div>
             <div class="about-text">
                 <h3>Senior Research Fellow & Climate Change Expert</h3>
@@ -1107,16 +1147,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Typed.js for hero section
         const typed = new Typed('#typed', {
             strings: [
-                'Climate Change Adaptation Specialist',
-                'Ecosystem Management Researcher',
-                'Environmental Policy Advisor',
-                'Sustainability Science Expert',
-                'Educator & Mentor'
+                '"A woman’s lead in science is a planet’s hope in action"'
             ],
             typeSpeed: 50,
             backSpeed: 30,
             loop: true,
             backDelay: 2000,
+            style:"font-family",
             showCursor: false,
             cursorChar: '|'
         });
