@@ -13,8 +13,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-      <link rel="stylesheet" href="whatsapx.css">
-      <link rel="icon" type="image/svg+xml" href="DR.png">
+      <link rel="stylesheet" href="css/whatsapx.css">
+      <link rel="icon" type="image/svg+xml" href="logo.svg">
       <!-- Favicons -->
 
 
@@ -749,7 +749,7 @@
     <!-- Header -->
     <header>
         <div id="logo" class="logo">
-        <h1><a href="#" class="logo"><img src="logo.svg" alt="" title="" /></a></h1>
+        <h1><a href="#" class="logo"><img src="img/logo.svg" alt="" title="" /></a></h1>
       </div>
       <div class="hero-text animated fadeInDownBig"> <a href="#">
         
@@ -762,6 +762,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#expertise">Expertise</a></li>
                  <li><a href="publi.html">Publications</a></li>
+                 <li><a href="proj.html">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -771,15 +772,15 @@
  <section class="hero" id="home">
     <div class="carousel-container">
         <!-- Mobile slides (will be removed on desktop) -->
-        <div class="carousel-slide slide-mobile" data-image="b.JPG"></div>
-        <div class="carousel-slide slide-mobile" data-image="e.JPG"></div>
-        <div class="carousel-slide slide-mobile" data-image="j.JPG"></div>
-        <div class="carousel-slide slide-mobile" data-image="l.JPG"></div>
-        <div class="carousel-slide slide-mobile" data-image="i.JPG"></div>
+        <div class="carousel-slide slide-mobile" data-image="img/b.JPG"></div>
+        <div class="carousel-slide slide-mobile" data-image="img/e.JPG"></div>
+        <div class="carousel-slide slide-mobile" data-image="img/j.JPG"></div>
+        <div class="carousel-slide slide-mobile" data-image="img/l.JPG"></div>
+        <div class="carousel-slide slide-mobile" data-image="img/i.JPG"></div>
         <!-- Desktop slides (will be removed on mobile) -->
-        <div class="carousel-slide slide-desktop" data-image="a.JPG"></div>
-        <div class="carousel-slide slide-desktop" data-image="c.JPG"></div>
-        <div class="carousel-slide slide-desktop" data-image="d.JPG"></div>
+        <div class="carousel-slide slide-desktop" data-image="img/a.JPG"></div>
+        <div class="carousel-slide slide-desktop" data-image="img/c.JPG"></div>
+        <div class="carousel-slide slide-desktop" data-image="img/d.JPG"></div>
         
     </div>
       <div class="hero-content" > 
@@ -787,7 +788,7 @@
             <h1 style="font-size: 60px" class="typed-text" id="typed"></span></h1>
             <div class="btn-container">
                 <a href="#contact" class="btn">        
-                    <div>Dr. Adelina</div>
+                    <div>Dr. Adelina Mensah</div>
                 </a>
             </div>
         </div>
@@ -820,15 +821,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Store all slides in memory
     const allSlides = [
-        { class: 'slide-1 slide-desktop', image: 'a.JPG', animation: 'diagonalSlideIn' },
-        { class: 'slide-2 slide-mobile', image: 'b.JPG', animation: 'boxPuzzle' },
-        { class: 'slide-4 slide-desktop', image: 'c.JPG', animation: 'waterSplash' },
-        { class: 'slide-5 slide-desktop', image: 'd.JPG', animation: 'cancellationEffect' },
-        { class: 'slide-6 slide-mobile', image: 'e.JPG', animation: 'glitchEffect' },
-        { class: 'slide-7 slide-mobile', image: 'f.JPG', animation: 'treeDrawing' },
-        { class: 'slide-8 slide-mobile', image: 'j.JPG', animation: 'blindsEffect' },
-        { class: 'slide-9 slide-mobile', image: 'l.JPG', animation: 'swirlEffect' },
-        { class: 'slide-10 slide-mobile', image: 'i.JPG', animation: 'foldEffect' }
+        { class: 'slide-1 slide-desktop', image: 'img/a.JPG', animation: 'diagonalSlideIn' },
+        { class: 'slide-2 slide-mobile', image: 'img/b.JPG', animation: 'boxPuzzle' },
+        { class: 'slide-4 slide-desktop', image: 'img/c.JPG', animation: 'waterSplash' },
+        { class: 'slide-5 slide-desktop', image: 'img/d.JPG', animation: 'cancellationEffect' },
+        { class: 'slide-6 slide-mobile', image: 'img/e.JPG', animation: 'glitchEffect' },
+        { class: 'slide-7 slide-mobile', image: 'img/f.JPG', animation: 'treeDrawing' },
+        { class: 'slide-8 slide-mobile', image: 'img/j.JPG', animation: 'blindsEffect' },
+        { class: 'slide-9 slide-mobile', image: 'img/l.JPG', animation: 'swirlEffect' },
+        { class: 'slide-10 slide-mobile', image: 'img/i.JPG', animation: 'foldEffect' }
     ];
 
     const container = document.querySelector('.carousel-container');
@@ -909,7 +910,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="about-content">
             <div class="about-image">
-                <img src="ax.jpg" alt="Dr. Adelina Mensah">
+                <img src="img/ax.jpg" alt="Dr. Adelina Mensah">
             </div>
             <div class="about-text">
                 <h3>Senior Research Fellow & Climate Change Expert</h3>
@@ -937,60 +938,66 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section class="section expertise" id="expertise">
-        <div class="section-title">
-            <h2>Areas of Expertise</h2>
+   <!-- Expertise Section -->
+<section class="section expertise" id="expertise">
+    <div class="section-title">
+        <h2>Areas of Expertise</h2>
+    </div>
+    <div class="expertise-grid">
+        
+        <!-- Climate Change -->
+        <div class="expertise-card">
+            <div class="expertise-icon">
+                <img src="img/climate.svg" alt="Climate Change" />
+            </div>
+            <div class="expertise-content" style="color: white;">
+                <h3 style="color: white;" >Climate Change & Sustainability </h3>
+                <ul>
+                    <li>Climate resilience strategies</li>
+                    <li>Sustainable development policy</li>
+                    <li>Carbon footprint analysis</li>
+                    <li>Renewable energy transition</li>
+                    <li>Climate adaptation frameworks</li>
+                </ul>
+            </div>
         </div>
-        <div class="expertise-grid">
-            <div class="expertise-card">
-                <div class="expertise-icon">
-                    <i class="fas fa-cloud-sun"></i>
-                </div>
-                <div class="expertise-content">
-                    <h3>Climate Change & Sustainability</h3>
-                    <ul>
-                        <li>Climate resilience strategies</li>
-                        <li>Sustainable development policy</li>
-                        <li>Carbon footprint analysis</li>
-                        <li>Renewable energy transition</li>
-                        <li>Climate adaptation frameworks</li>
-                    </ul>
-                </div>
+
+        <!-- Ecosystem Management -->
+        <div class="expertise-card">
+            <div class="expertise-icon">
+                <img src="img/ecosystem.svg" alt="Ecosystem Management" />
             </div>
-            <div class="expertise-card">
-                <div class="expertise-icon">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <div class="expertise-content">
-                    <h3>Ecosystem Management</h3>
-                    <ul>
-                        <li>Biodiversity conservation</li>
-                        <li>Ecosystem-based adaptation</li>
-                        <li>Natural resource management</li>
-                        <li>Restoration ecology</li>
-                        <li>Habitat protection strategies</li>
-                    </ul>
-                </div>
+            <div class="expertise-content" style="color: white;">
+                <h3 style="color: white;">Ecosystem Management</h3>
+                <ul>
+                    <li>Biodiversity conservation</li>
+                    <li>Ecosystem-based adaptation</li>
+                    <li>Natural resource management</li>
+                    <li>Restoration ecology</li>
+                    <li>Habitat protection strategies</li>
+                </ul>
             </div>
-            <div class="expertise-card">
-                <div class="expertise-icon">
-                    <i class="fas fa-tint"></i>
-                </div>
-                <div class="expertise-content">
-                    <h3>Water Resources</h3>
-                    <ul>
-                        <li>Integrated water governance</li>
-                        <li>Water sanitation solutions</li>
-                        <li>Watershed management</li>
-                        <li>Water quality assessment</li>
-                        <li>Flood risk mitigation</li>
-                    </ul>
-                </div>
-            </div>
-            
         </div>
-    </section>
+
+        <!-- Water Resources -->
+        <div class="expertise-card">
+            <div class="expertise-icon">
+                <img src="img/water.svg" alt="Water Resources" />
+            </div>
+            <div class="expertise-content" style="color: white;">
+                <h3 style="color: white;">Water Resources</h3>
+                <ul>
+                    <li>Integrated water governance</li>
+                    <li>Water sanitation solutions</li>
+                    <li>Watershed management</li>
+                    <li>Water quality assessment</li>
+                    <li>Flood risk mitigation</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 
 </head>
@@ -1002,7 +1009,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <h2>Let's Collaborate</h2>
         <p>Connect with me to discuss research collaborations, policy development, or speaking engagements focused on climate resilience and sustainability.</p>
         <div class="contact-buttons">
-            <a href="mailto:contact@dradelinamensah.com" class="contact-btn">
+            <a href="mailto:ammensah@ug.edu.gh" class="contact-btn">
                 <i class="fas fa-envelope"></i>
                 Email Me
             </a>
@@ -1010,10 +1017,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <i class="fab fa-linkedin"></i>
                 LinkedIn
             </a>
-            <a href="#" class="contact-btn">
-                <i class="fas fa-file-pdf"></i>
-                Download CV
-            </a>
+           <a href="img/CV.docx" class="contact-btn" download>
+    <i class="fas fa-file-pdf"></i>
+    Download CV
+</a>
         </div>
     </section>
 
@@ -1029,7 +1036,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="chat-header">
             <div class="chat-header-info">
                 <div class="chat-avatar">
-                    <img src="e.JPG" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <img src="img/e.JPG" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center;  background: white!important; font-weight: bold;">OT</div>
                 </div>
                 <div>
@@ -1052,30 +1059,34 @@ document.addEventListener('DOMContentLoaded', function() {
             
         </div>
         
-        <div class="chat-footer">
-            <div class="message-input-container">
-                <textarea 
-                    class="message-input" 
-                    id="messageInput" 
-                    placeholder="Type a message..."
-                    rows="1"
-                ></textarea>
-                <button class="send-btn" id="sendBtn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
-                    </svg>
-                </button>
-            </div>
-         
-        </div>
+       <div class="chat-footer">
+    <div class="message-input-container">
+        <textarea 
+            class="message-input" 
+            id="messageInput" 
+            placeholder="Type a message..."
+            rows="1"
+        ></textarea>
+        <button class="send-btn" id="sendBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+            </svg>
+        </button>
     </div>
-    <script src="whatsapp.js"></script>
+
+    <!-- ✅ Add this -->
+    <button class="start-chat-btn" id="startChatBtn">
+        Start Chat on WhatsApp
+    </button>
+</div>
+    </div>
+    <script src="js/whatsapp.js"></script>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-col">
-                <h3>Dr. Adelina Mensah</h3>
+                <img src="img/logo.svg" alt="Logo" style="width:120px; height:auto;">
                 <p>Senior Research Fellow at the Institute for Environment and Sanitation Studies (IESS), University of Ghana</p>
                 <p>Climate Change & Sustainability Expert | Ecosystem Management | Environmental Policy</p>
                 <div class="social-links">
