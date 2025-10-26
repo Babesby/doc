@@ -746,7 +746,27 @@
         }
         
     </style>
+
+    <style>
+     .carousel-slide 
+     {
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+     }
+     .carousel-slide.active 
+     {
+    opacity: 1;}
+        /* Initial state - hide all */
+     .carousel-slide 
+     {
+        display: none;
+        }
+    </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -782,10 +802,10 @@
         <!-- Desktop slides (will be removed on mobile) -->
         <div class="carousel-slide slide-desktop" data-image="img/a.JPG"></div>
         <div class="carousel-slide slide-desktop" data-image="img/c.JPG"></div>
-        <div class="carousel-slide slide-desktop" data-image="img/d.JPG"></div>
-        
+        <div class="carousel-slide slide-desktop" data-image="img/d.JPG"></div>   
     </div>
-      <div class="hero-content" > 
+
+    <div class="hero-content" > 
         <div class="hero-text">
             <h1 style="font-size: 60px" class="typed-text" id="typed"></span></h1>
             <div class="btn-container">
@@ -794,30 +814,8 @@
                 </a>
             </div>
         </div>
-    </div>
-    
-  
+    </div>    
 </section>
-
-
-    <style>     
-.carousel-slide {
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-}
-
-/* Initial state - hide all */
-.carousel-slide {
-    display: none;
-}
-</style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
