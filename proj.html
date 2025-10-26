@@ -3,658 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Adelina Mensah | Publications</title>
+    <title>Dr. Adelina Mensah | Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Poppins -->
+     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
       <link rel="stylesheet" href="css/whatsapx.css">
-        <link rel="stylesheet" href="css/gallerryy.css" />
-        <link rel="icon" type="image/svg+xml" href="img/logo.svg">
-    <style>
-        :root {
-            --primary: #9a70b5;
-            --primary-dark: #7a5294;
-            --primary-light: #c9a8da;
-            --secondary: #4ecdc4;
-            --dark: #2a2d3e;
-            --light: #f8f9fc;
-            --accent: #ff6b6b;
-            --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+      <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+      <!-- Favicons -->
 
 
-        .scholar-profile {
-            max-width: 1200px;
-            margin: 30px auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 50px rgba(42, 45, 62, 0.15);
-            overflow: hidden;
-        }
 
-        /* Profile Header */
-        .profile-header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            color: white;
-            padding: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            position: relative;
-            overflow: hidden;
-        }
 
-        .profile-header::before {
-            content: "";
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-        }
-
-        .profile-header::after {
-            content: "";
-            position: absolute;
-            bottom: -80px;
-            left: -80px;
-            width: 250px;
-            height: 250px;
-            background: rgba(255, 255, 255, 0.07);
-            border-radius: 50%;
-        }
-
-        .researcher-info {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            gap: 25px;
-            align-items: center;
-            z-index: 2;
-        }
-
-        .avatar-container {
-            position: relative;
-            border-radius: 50%;
-            background: white;
-            padding: 5px;
-            box-shadow: 0 8px 25px rgba(42, 45, 62, 0.25);
-        }
-
-        .avatar-placeholder {
-            width: 130px;
-            height: 130px;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-light) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 52px;
-        }
-
-        .researcher-info h1 {
-            font-size: 36px;
-            font-weight: 700;
-            margin: 0 0 8px 0;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .affiliation {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
-            margin: 0 0 8px 0;
-            font-weight: 400;
-        }
-
-        .research-fields {
-            font-size: 16px;
-            color: var(--light);
-            background: rgba(255, 255, 255, 0.15);
-            padding: 8px 20px;
-            border-radius: 30px;
-            display: inline-block;
-            margin: 10px 0 0 0;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .metrics-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            min-width: 300px;
-            z-index: 2;
-        }
-
-        .metric-card {
-            flex: 1;
-            min-width: 130px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .metric-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        .metric-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            color: white;
-            font-size: 20px;
-        }
-
-        .metric-value {
-            font-size: 32px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 5px;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .metric-label {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.85);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Publication Charts */
-        .publication-charts {
-            display: flex;
-            gap: 30px;
-            padding: 40px;
-            background: var(--light);
-        }
-
-        .chart-container {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            border-radius: 18px;
-            padding: 25px;
-            box-shadow: 0 8px 25px rgba(42, 45, 62, 0.08);
-            transition: var(--transition);
-        }
-
-        .chart-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(42, 45, 62, 0.15);
-        }
-
-        .chart-container h2 {
-            margin-top: 0;
-            font-size: 22px;
-            color: var(--dark);
-            margin-bottom: 25px;
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .chart-container h2::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-
-        .chart {
-            height: 250px;
-            background: var(--light);
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-around;
-            padding: 0 20px;
-        }
-
-        .chart-bar {
-            width: 40px;
-            background: linear-gradient(to top, var(--primary), var(--primary-light));
-            border-radius: 6px 6px 0 0;
-            position: relative;
-            transition: height 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .chart-bar:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-        }
-
-        .chart-bar::after {
-            content: attr(data-year);
-            position: absolute;
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 12px;
-            color: var(--dark);
-            font-weight: 500;
-        }
-
-        .chart-value {
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--dark);
-        }
-
-        /* Publications Filter */
-        .publications-section {
-            padding: 40px;
-            background: white;
-        }
-
-        .publications-section h2 {
-            font-size: 28px;
-            color: var(--dark);
-            margin-bottom: 25px;
-            font-weight: 700;
-        }
-
-        .filter-controls {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .filter-option {
-            padding: 10px 25px;
-            background: var(--light);
-            border-radius: 30px;
-            font-size: 15px;
-            cursor: pointer;
-            transition: var(--transition);
-            border: 2px solid var(--light);
-            font-weight: 500;
-        }
-
-        .filter-option.active, .filter-option:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .journal-select {
-            margin-left: auto;
-            padding: 10px 20px;
-            border-radius: 30px;
-            border: 2px solid var(--light);
-            background: white;
-            font-family: 'Poppins', sans-serif;
-            font-size: 15px;
-            color: var(--dark);
-            font-weight: 500;
-            min-width: 200px;
-            transition: var(--transition);
-        }
-
-        .journal-select:hover {
-            border-color: var(--primary-light);
-        }
-
-        .journal-select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(154, 112, 181, 0.2);
-        }
-
-        .publications-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-            gap: 25px;
-        }
-
-        .publication-card {
-            background: var(--light);
-            border-radius: 18px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(42, 45, 62, 0.08);
-            border: 2px solid transparent;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .publication-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background: var(--secondary);
-        }
-
-        .publication-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(42, 45, 62, 0.15);
-            border-color: rgba(154, 112, 181, 0.2);
-        }
-
-        .pub-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .pub-badge {
-            background: linear-gradient(to right, var(--accent), #ff9a9e);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .pub-metrics {
-            display: flex;
-            gap: 15px;
-            font-size: 14px;
-            color: var(--primary-dark);
-            font-weight: 500;
-        }
-
-        .citation-count {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .pub-title {
-            font-size: 20px;
-            margin: 0 0 10px 0;
-            color: var(--dark);
-            line-height: 1.4;
-            font-weight: 600;
-        }
-
-        .pub-authors {
-            color: var(--primary);
-            margin: 0 0 8px 0;
-            font-size: 16px;
-        }
-
-        .pub-journal {
-            color: var(--secondary);
-            font-weight: 500;
-            margin: 0 0 20px 0;
-            font-size: 15px;
-        }
-
-        .pub-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .abstract-toggle {
-            background: transparent;
-            border: none;
-            color: var(--primary);
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 0;
-            font-size: 15px;
-            transition: var(--transition);
-        }
-
-        .abstract-toggle:hover {
-            color: var(--primary-dark);
-        }
-
-        .action-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .action-icons a {
-            color: var(--primary-light);
-            font-size: 18px;
-            transition: var(--transition);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(154, 112, 181, 0.1);
-        }
-
-        .action-icons a:hover {
-            color: white;
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .pub-abstract {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            color: var(--dark);
-            line-height: 1.7;
-            padding: 0 20px;
-            font-size: 15px;
-        }
-
-        .pub-abstract.expanded {
-            max-height: 500px;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            margin-top: 20px;
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Coauthors Section */
-        .coauthors-section {
-            padding: 40px;
-            background: linear-gradient(135deg, var(--light) 0%, #eef2f7 100%);
-        }
-
-        .coauthors-section h2 {
-            font-size: 28px;
-            color: var(--dark);
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .coauthors-container {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .coauthor {
-            flex: 1;
-            min-width: 250px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            background: white;
-            padding: 20px;
-            border-radius: 18px;
-            transition: var(--transition);
-            box-shadow: 0 8px 25px rgba(42, 45, 62, 0.08);
-            border: 2px solid transparent;
-        }
-
-        .coauthor:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(42, 45, 62, 0.15);
-            border-color: rgba(154, 112, 181, 0.2);
-        }
-
-        .coauthor-avatar {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-light) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-
-        .coauthor-name {
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-
-        .coauthor-pubs {
-            font-size: 15px;
-            color: var(--primary-dark);
-            font-weight: 500;
-        }
-
-        /* Profile Links Section */
-        .profile-links {
-            padding: 40px;
-            background: white;
-            border-top: 1px solid #eee;
-        }
-
-        .profile-links h2 {
-            font-size: 28px;
-            color: var(--dark);
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .links-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .profile-link {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px;
-            background: var(--light);
-            border-radius: 18px;
-            text-decoration: none;
-            color: var(--dark);
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-
-        .profile-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(42, 45, 62, 0.1);
-            border-color: var(--primary-light);
-        }
-
-        .link-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-        }
-
-        .link-text {
-            flex: 1;
-        }
-
-        .link-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--primary-dark);
-        }
-
-        .link-url {
-            font-size: 14px;
-            color: var(--primary);
-            word-break: break-all;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1100px) {
-            .publications-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .profile-header {
-                flex-direction: column;
-                padding: 30px 20px;
-            }
-            
-            .researcher-info {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .metrics-container {
-                justify-content: center;
-            }
-            
-            .pub-header {
-                flex-direction: column;
-            }
-            
-            .publication-charts {
-                flex-direction: column;
-                padding: 30px 20px;
-            }
-            
-            .filter-controls {
-                flex-direction: column;
-            }
-            
-            .journal-select {
-                margin-left: 0;
-                width: 100%;
-            }
-        }
-    </style>
+   
     <style>
     
         :root {
@@ -770,6 +136,15 @@
         }
 
         /* Enhanced Hero Section with 10 Animation Styles */
+       #typed {
+  font-family: 'Satisfy', cursive;
+  font-size: 2.2rem;
+  font-weight: normal;
+  line-height: 1.1;
+  color: #222; /* Adjust to match your theme */
+}
+
+
         .hero {
             height: 100vh;
         
@@ -809,7 +184,8 @@
         }
         }
 
-        
+
+
   .hero-content {
             text-align: center;
             z-index: 2;
@@ -892,7 +268,21 @@
             color: var(--primary);
         }
 
-     
+     @media (min-width: 1000px) {
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    transform: translate(-50%, -50%); /* Centers it properly */
+    padding: 1rem;
+    border-radius: 30px;
+    z-index: 5;
+    background-color: rgba(235, 217, 244, 0.8); /* Fixed opacity */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 80%;
+  }
+}
 
 .carousel-slide.active {
     opacity: 1;
@@ -1035,7 +425,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(122, 82, 148, 0.3);
-            height: 500px;
+            height: 700px;
         }
 
         .about-image img {
@@ -1352,148 +742,10 @@
                 margin-left: 0;
             }
         }
+        
     </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-       <div id="logo" class="logo">
-        <h1><a href="#" class="logo"><img src="img/logo.svg" alt="" title="" /></a></h1>
-      </div>
-        <div class="menu-toggle" id="menuToggle">
-            <i class="fas fa-bars"></i>
-        </div>
-        <nav id="nav">
-            <ul>
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#expertise">Expertise</a></li>
-                <li><a href="publi.html">Publications</a></li>
-                <li><a href="proj.html">Projects</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <br /> <br /> <br /> 
-     
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Adelina Mensah | Projects</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #9a70b5;
-            --primary-dark: #7a5294;
-            --primary-light: #c9a8da;
-            --secondary: #4ecdc4;
-            --dark: #2a2d3e;
-            --light: #f8f9fc;
-            --accent: #ff6b6b;
-            --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            background: rgba(248, 249, 252, 0.85);
-            box-shadow: 0 5px 20px rgba(122, 82, 148, 0.1);
-        }
-
-        header.scrolled {
-            padding: 1rem 5%;
-            background: rgba(154, 112, 181, 0.95);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-weight: 700;
-            color: var(--primary-dark);
-            text-decoration: none;
-            font-size: 1.8rem;
-        }
-
-        header.scrolled .logo {
-            color: white;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-            transition: var(--transition);
-        }
-
-        nav ul li a.active,
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--primary);
-            transition: var(--transition);
-            border-radius: 10px;
-        }
-
-        nav ul li a.active::after,
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        header.scrolled nav ul li a {
-            color: white;
-        }
-
+    
         /* Page Header */
         .page-header {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
@@ -1885,54 +1137,33 @@
                 width: 100%;
             }
 
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                height: 100vh;
-                width: 70%;
-                background: var(--primary);
-                transition: var(--transition);
-                z-index: 1001;
-                padding: 6rem 2rem 2rem;
-                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
-            }
-
-            nav.active {
-                right: 0;
-            }
-
-            nav ul {
-                flex-direction: column;
-            }
-
-            nav ul li {
-                margin: 1rem 0;
-            }
-
-            nav ul li a {
-                color: white;
-                font-size: 1.2rem;
-            }
-
-            .menu-toggle {
-                display: block;
-                z-index: 1002;
-                cursor: pointer;
-                font-size: 1.5rem;
-                color: var(--primary-dark);
-            }
-
-            header.scrolled .menu-toggle {
-                color: white;
-            }
-        }
-
-        .menu-toggle {
-            display: none;
         }
     </style>
 </head>
+<body>
+    <!-- Header -->
+    <header>
+        <div id="logo" class="logo">
+        <h1><a href="#" class="logo"><img src="img/logo.svg" alt="" title="" /></a></h1>
+      </div>
+      <div class="hero-text animated fadeInDownBig"> <a href="#">
+        
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="nav">
+            <ul>
+              <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#expertise">Expertise</a></li>
+                <li><a href="publi.html">Publications</a></li>
+                <li><a href="proj.html">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+     
+
 <body>
     <!-- Header -->
    
@@ -2040,7 +1271,7 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="#" class="project-link">
+                    <a href="https://environment.leeds.ac.uk/directories0/dir-record/research-projects/2055/the-indigenous-peoples-observatory-network-ipon-the-climate-food-health-nexus" class="project-link">
                         Learn More <i class="fas fa-arrow-right"></i>
                     </a>
                     <div class="project-impact">Multi-national Impact</div>
@@ -2072,7 +1303,7 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="#" class="project-link">
+                    <a href="https://ccita116.parassitologia.unina.it/getdoc.php?ID=3" class="project-link">
                         Learn More <i class="fas fa-arrow-right"></i>
                     </a>
                     <div class="project-impact">EU Collaboration</div>
@@ -2104,7 +1335,7 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="#" class="project-link">
+                    <a href="https://albatross-project.eu/" class="project-link">
                         Learn More <i class="fas fa-arrow-right"></i>
                     </a>
                     <div class="project-impact">European Partnership</div>
@@ -2136,7 +1367,7 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="#" class="project-link">
+                    <a href="https://www.ntnu.edu/norhed2/bc5" class="project-link">
                         Learn More <i class="fas fa-arrow-right"></i>
                     </a>
                     <div class="project-impact">Norway Partnership</div>
@@ -2168,7 +1399,7 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="#" class="project-link">
+                    <a href="https://tsitica.uct.ac.za/outputs" class="project-link">
                         View Results <i class="fas fa-arrow-right"></i>
                     </a>
                     <div class="project-impact">Pandemic Research</div>
@@ -2200,7 +1431,7 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="#" class="project-link">
+                    <a href="https://www.c2rcdproject.com/resources/" class="project-link">
                         Learn More <i class="fas fa-arrow-right"></i>
                     </a>
                     <div class="project-impact">Denmark Partnership</div>
@@ -2232,7 +1463,7 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="#" class="project-link">
+                    <a href="https://gtr.ukri.org/projects?ref=EP%2FV043102%2F1" class="project-link">
                         View Results <i class="fas fa-arrow-right"></i>
                     </a>
                     <div class="project-impact">UK Collaboration</div>
@@ -2264,7 +1495,7 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="#" class="project-link">
+                    <a href="https://ict.ipbes.net/ipbes-ict-guide/data-and-knowledge-management/citations-of-ipbes-assessments/nexus-assessment" class="project-link">
                         View Assessment <i class="fas fa-arrow-right"></i>
                     </a>
                     <div class="project-impact">Global Policy Impact</div>
@@ -2296,7 +1527,7 @@
                     </div>
                 </div>
                 <div class="project-footer">
-                    <a href="#" class="project-link">
+                    <a href="https://files.ipbes.net/ipbes-web-prod-public-files/spm_africa_2018_digital.pdf" class="project-link">
                         View Assessment <i class="fas fa-arrow-right"></i>
                     </a>
                     <div class="project-impact">Continental Impact</div>
@@ -2384,7 +1615,9 @@
 
    
 
-     <!-- WhatsApp Floating Button -->
+ 
+
+         <!-- WhatsApp Floating Button -->
     <button class="whatsapp-float" id="whatsappButton">
         <svg class="whatsapp-icon" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -2442,7 +1675,7 @@
     </div>
     <script src="js/whatsapp.js"></script>
 
-      <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-col">
@@ -2467,174 +1700,7 @@
         </div>
     </footer>
 
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize charts
-            initPublicationChart();
-            initCitationChart();
-            
-            // Set up abstract toggle functionality
-            const toggleButtons = document.querySelectorAll('.abstract-toggle');
-            toggleButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const abstract = this.closest('.publication-card').querySelector('.pub-abstract');
-                    abstract.classList.toggle('expanded');
-                    
-                    if (abstract.classList.contains('expanded')) {
-                        this.innerHTML = 'Hide Abstract <i class="fas fa-chevron-up"></i>';
-                    } else {
-                        this.innerHTML = 'Show Abstract <i class="fas fa-chevron-down"></i>';
-                    }
-                });
-            });
-            
-            // Set up filter options
-            const filterOptions = document.querySelectorAll('.filter-option');
-            const journalSelect = document.getElementById('journal-filter');
-            const publications = document.querySelectorAll('.publication-card');
-            const currentYear = new Date().getFullYear();
-            
-            // Publication filtering function
-            function filterPublications() {
-                const activeFilter = document.querySelector('.filter-option.active').dataset.filter;
-                const journalFilter = journalSelect.value;
-                
-                publications.forEach(pub => {
-                    const pubYear = parseInt(pub.dataset.year);
-                    const isHighlyCited = pub.dataset.highlyCited === 'true';
-                    const pubJournal = pub.dataset.journal;
-                    
-                    let show = true;
-                    
-                    // Apply filter based on selected option
-                    if (activeFilter === 'last5' && pubYear < currentYear - 4) {
-                        show = false;
-                    } else if (activeFilter === 'highly-cited' && !isHighlyCited) {
-                        show = false;
-                    }
-                    
-                    // Apply journal filter
-                    if (journalFilter !== 'all' && pubJournal !== journalFilter) {
-                        show = false;
-                    }
-                    
-                    // Toggle visibility
-                    if (show) {
-                        pub.style.display = 'block';
-                        setTimeout(() => {
-                            pub.style.opacity = '1';
-                        }, 50);
-                    } else {
-                        pub.style.opacity = '0';
-                        setTimeout(() => {
-                            pub.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            }
-            
-            // Add event listeners to filter buttons
-            filterOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    filterOptions.forEach(opt => opt.classList.remove('active'));
-                    this.classList.add('active');
-                    filterPublications();
-                });
-            });
-            
-            // Add event listener to journal select
-            journalSelect.addEventListener('change', filterPublications);
-            
-            // Animate metrics counting up
-            animateValue('citation-count', 0, 1036, 2000);
-            animateValue('h-index', 0, 16, 1500);
-            animateValue('i10-index', 0, 21, 1800);
-        });
-        
-        function initPublicationChart() {
-            const chart = document.getElementById('yearly-publications-chart');
-            const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
-            const pubs = [2, 4, 3, 5, 6, 4, 7, 5];
-            
-            // Clear any existing content
-            chart.innerHTML = '';
-            
-            // Find max value for scaling
-            const maxPubs = Math.max(...pubs);
-            
-            // Create bars
-            years.forEach((year, i) => {
-                const bar = document.createElement('div');
-                bar.className = 'chart-bar';
-                bar.style.height = `${(pubs[i] / maxPubs) * 90}%`;
-                bar.setAttribute('data-year', year);
-                
-                // Add value label at top of bar
-                const valueLabel = document.createElement('div');
-                valueLabel.className = 'chart-value';
-                valueLabel.textContent = pubs[i];
-                
-                bar.appendChild(valueLabel);
-                chart.appendChild(bar);
-                
-                // Animate in
-                setTimeout(() => {
-                    bar.style.height = `${(pubs[i] / maxPubs) * 90}%`;
-                }, i * 150);
-            });
-        }
-        
-        function initCitationChart() {
-            const chart = document.getElementById('citation-impact-chart');
-            const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
-            const citations = [80, 120, 95, 150, 180, 200, 220, 110];
-            
-            // Clear any existing content
-            chart.innerHTML = '';
-            
-            // Find max value for scaling
-            const maxCitations = Math.max(...citations);
-            
-            // Create bars
-            years.forEach((year, i) => {
-                const bar = document.createElement('div');
-                bar.className = 'chart-bar';
-                bar.style.height = '0%';
-                bar.style.background = 'linear-gradient(to top, var(--secondary), #8de9e4)';
-                bar.setAttribute('data-year', year);
-                
-                // Add value label at top of bar
-                const valueLabel = document.createElement('div');
-                valueLabel.className = 'chart-value';
-                valueLabel.textContent = citations[i];
-                
-                bar.appendChild(valueLabel);
-                chart.appendChild(bar);
-                
-                // Animate in
-                setTimeout(() => {
-                    bar.style.height = `${(citations[i] / maxCitations) * 90}%`;
-                }, i * 150);
-            });
-        }
-        
-        function animateValue(id, start, end, duration) {
-            const element = document.getElementById(id);
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                element.textContent = value.toLocaleString();
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-    </script>
-     <script>
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -2685,16 +1751,13 @@
         // Typed.js for hero section
         const typed = new Typed('#typed', {
             strings: [
-                'Climate Change Adaptation Specialist',
-                'Ecosystem Management Researcher',
-                'Environmental Policy Advisor',
-                'Sustainability Science Expert',
-                'Educator & Mentor'
+                '"A woman’s lead in science is a planet’s hope in action"'
             ],
             typeSpeed: 50,
             backSpeed: 30,
             loop: true,
             backDelay: 2000,
+            style:"font-family",
             showCursor: false,
             cursorChar: '|'
         });
@@ -2714,5 +1777,11 @@
             });
         });
     </script>
+    
 </body>
 </html>
+
+
+  
+   
+    

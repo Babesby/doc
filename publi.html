@@ -1,9 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Adelina Mensah | Publications</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Publications - Dr. Adelina Maria Mensah</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+  :root {
+    --primary: #9a70b5;
+    --primary-dark: #7a5294;
+    --primary-light: #c9a8da;
+    --secondary: #4ecdc4;
+    --dark: #2a2d3e;
+    --light: #f8f9fc;
+    --accent: #ff6b6b;
+    --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body {
+    background: #fff;
+    color: var(--primary);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 95%;
+    max-width: 1300px;
+    margin: 2rem auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--primary-dark);
+}
+
+.header p {
+    color: var(--dark);
+    margin: 0.4rem 0 1rem 0;
+}
+
+.publications-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: var(--light);
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.stat-number {
+    font-size: 1.4rem;
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.stat-label {
+    color: var(--dark);
+    font-size: 0.85rem;
+}
+
+.search-box {
+    max-width: 700px;
+    margin: 1rem auto 1.5rem;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 2.6rem;
+    border-radius: 30px;
+    border: 2px solid var(--primary-light);
+    background: #fff;
+    color: var(--dark);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    border-color: var(--secondary);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+}
+
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.filter-option {
+    background: var(--primary);
+    color: #fff;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.filter-option.active,
+.filter-option:hover {
+    background: var(--secondary);
+    color: var(--dark);
+}
+
+.year-select {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 0.9rem;
+}
+
+.publications-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  padding: 1rem;
+}
+
+/* Publication card container */
+.publication-card {
+  background: #c9a8da;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.35);
+}
+
+/* Responsive image wrapper */
+.pub-thumbnail {
+  width: 100%;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 2;  /* keeps good proportions like a paper page */
+}
+
+.pub-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Details section */
+.pub-details {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pub-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: white;
+}
+
+.pub-authors,
+.pub-journal {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.pub-doi a {
+  color: white;
+  text-decoration: none;
+}
+
+.pub-doi a:hover {
+  text-decoration: underline;
+}
+
+/* Small screen optimizations */
+@media (max-width: 600px) {
+  .publications-list {
+    gap: 0.8rem;
+  }
+  .publication-card {
+    border-radius: 12px;
+  }
+  .pub-details {
+    padding: 0.8rem;
+  }
+  .pub-title {
+    font-size: 0.95rem;
+  }
+}
+
+.pub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+}
+
+.pub-badge {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    display: inline-flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.pub-title {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: white;
+    margin: 0.2rem 0;
+}
+
+.pub-authors {
+    color: var(--dark);
+    font-size: 0.86rem;
+    margin: 0;
+}
+
+.pub-journal {
+    color: var(--primary-dark);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.pub-doi a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.84rem;
+}
+
+.pub-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.abstract-toggle {
+    background: none;
+    border: none;
+    color: var(--primary-dark);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0;
+    transition: var(--transition);
+}
+
+.abstract-toggle:hover {
+    color: var(--primary);
+}
+
+.action-icons a {
+    color: var(--primary-dark);
+    margin-left: 0.6rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.action-icons a:hover {
+    color: var(--primary);
+}
+
+.pub-abstract {
+    display: none;
+    color: var(--dark);
+    font-size: 0.86rem;
+    margin-top: 0.6rem;
+    line-height: 1.4;
+}
+
+.pub-abstract.show {
+    display: block;
+}
+   /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 12rem 5% 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .page-header::after {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+@media (max-width: 720px) {
+    .pub-thumbnail {
+        height: 150px;
+    }
+}
+
+  </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -35,890 +400,376 @@
             </ul>
         </nav>
     </header>
-    <br /> <br /> <br /> 
-     <section class="scholar-profile">
-        <!-- Profile Header -->
-        <div class="profile-header">
-            <div class="researcher-info">
-                <div class="avatar-container">
-                    <div class="avatar-placeholder">
-                        <img src="img/l.JPG" alt="User Avatar" class="avatar-image" />
-                    </div>
-                </div>
-                <div>
-                    <h1>Dr. Adelina Maria Mensah</h1>
-                    <p class="affiliation">Senior Research Fellow, Institute for Environment and Sanitation Studies</p>
-                    <p class="affiliation">University of Ghana, Legon</p>
-                    <p class="research-fields">Environmental Science • Sustainability • Climate Adaptation • Coastal Management</p>
-                </div>
-            </div>
-            
-            <div class="metrics-container">
-                <div class="metric-card">
-                    <div class="metric-icon">
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <div class="metric-value" id="citation-count">1,036</div>
-                    <div class="metric-label">Citations</div>
-                </div>
-                
-                <div class="metric-card">
-                    <div class="metric-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="metric-value" id="h-index">16</div>
-                    <div class="metric-label">h-index</div>
-                </div>
-                
-                <div class="metric-card">
-                    <div class="metric-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="metric-value" id="i10-index">21</div>
-                    <div class="metric-label">i10-index</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Publication Charts -->
-        <div class="publication-charts">
-            <div class="chart-container">
-                <h2>Publications by Year</h2>
-                <div class="chart" id="yearly-publications-chart"></div>
-            </div>
-            
-            <div class="chart-container">
-                <h2>Citation Impact</h2>
-                <div class="chart" id="citation-impact-chart"></div>
-            </div>
-        </div>
-        
-        <!-- Publications Section -->
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-       
+    
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
+  <div class="container">
+      <!-- Page Header -->
+    <section class="page-header">
+        <h1>Publications</h1>
+        <p>Dr. Adelina Maria Mensah - Recent Research & Academic Contributions</p><br /> <br /> 
+         <div class="publications-stats">
+      <div class="stat-card"><div class="stat-number" id="total-pubs">13</div><div class="stat-label">Total Publications</div></div>
+      <div class="stat-card"><div class="stat-number" id="recent-pubs">8</div><div class="stat-label">Last 3 Years</div></div>
+      <div class="stat-card"><div class="stat-number" id="journals">10</div><div class="stat-label">Different Journals</div></div>
+    </div>
+    </section>
+   
 
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 3px solid #667eea;
-        }
+   
 
-        .header h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            color: #666;
-        }
-
-        .filter-controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
-            align-items: center;
-        }
-
-        .filter-option {
-            padding: 0.7rem 1.5rem;
-            background: white;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .filter-option:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .filter-option.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-color: #667eea;
-        }
-
-        .year-select {
-            padding: 0.7rem 1rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .year-select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .publications-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-top: 0.5rem;
-        }
-
-        .publications-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .publication-card {
-            background: white;
-            border: 1px solid #e0e6ed;
-            border-radius: 15px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .publication-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-
-        .publication-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            border-color: #667eea;
-        }
-
-        .pub-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .pub-year {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .pub-badge {
-            background: #28a745;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .pub-badge.recent {
-            background: #17a2b8;
-        }
-
-        .pub-title {
-            font-size: 1.3rem;
-            color: #2c3e50;
-            margin-bottom: 0.8rem;
-            line-height: 1.4;
-            font-weight: 600;
-        }
-
-        .pub-authors {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-            font-style: italic;
-        }
-
-        .pub-journal {
-            font-size: 1rem;
-            color: #444;
-            margin-bottom: 0.8rem;
-            font-weight: 500;
-        }
-
-        .pub-doi {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .pub-doi a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        .pub-doi a:hover {
-            text-decoration: underline;
-        }
-
-        .pub-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .abstract-toggle {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .abstract-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .action-icons {
-            display: flex;
-            gap: 0.8rem;
-        }
-
-        .action-icons a {
-            color: #666;
-            font-size: 1.1rem;
-            padding: 0.5rem;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            background: #f8f9fa;
-        }
-
-        .action-icons a:hover {
-            color: #667eea;
-            background: #e9ecef;
-            transform: scale(1.1);
-        }
-
-        .pub-abstract {
-            margin-top: 1rem;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            display: none;
-        }
-
-        .pub-abstract.show {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                max-height: 0;
-            }
-            to {
-                opacity: 1;
-                max-height: 200px;
-            }
-        }
-
-        .search-box {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 1rem 1rem 1rem 3rem;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 1rem;
-                padding: 1rem;
-            }
-
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .filter-controls {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .filter-option {
-                text-align: center;
-            }
-
-            .publications-stats {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .pub-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .pub-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .action-icons {
-                justify-content: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1><i class="fas fa-file-alt"></i> Publications</h1>
-            <p>Dr. Adelina Maria Mensah - Recent Research & Academic Contributions</p>
-        </div>
-
-        <div class="publications-stats">
-            <div class="stat-card">
-                <span class="stat-number" id="total-pubs">13</span>
-                <div class="stat-label">Total Publications</div>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number" id="recent-pubs">8</span>
-                <div class="stat-label">Last 3 Years</div>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number" id="journals">10</span>
-                <div class="stat-label">Different Journals</div>
-            </div>
-        </div>
-
-        <div class="search-box">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" class="search-input" placeholder="Search publications by title, author, or keyword..." id="search-input">
-        </div>
-
-        <div class="filter-controls">
-            <div class="filter-option active" data-filter="all">All Publications</div>
-            <div class="filter-option" data-filter="2024">2024</div>
-            <div class="filter-option" data-filter="2023">2023</div>
-            <div class="filter-option" data-filter="2022">2022</div>
-            <select class="year-select" id="year-filter">
-                <option value="all">All Years</option>
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="older">Before 2022</option>
-            </select>
-        </div>
-        
-        <div class="publications-list" id="publications-container">
-            <!-- Publication 1 - 2025 -->
-            <div class="publication-card" data-year="2025" data-keywords="food insecurity community covid pandemic urban science">
-                <div class="pub-header">
-                    <div class="pub-badge recent">
-                        <i class="fas fa-calendar-alt"></i> Latest
-                    </div>
-                    <div class="pub-year">2025</div>
-                </div>
-                <h3 class="pub-title">Addressing Food Insecurity Through Community Kitchens During the COVID-19 Pandemic: A Case Study from the Eastern Cape, South Africa</h3>
-                <p class="pub-authors">Bezerra, J.C. et al.</p>
-                <p class="pub-journal">Urban Science, 9(2)</p>
-                <div class="pub-doi">
-                    DOI: <a href="https://doi.org/10.3390/urbansci9020037" target="_blank">https://doi.org/10.3390/urbansci9020037</a>
-                </div>
-                <div class="pub-actions">
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                    <div class="action-icons">
-                        <a href="https://doi.org/10.3390/urbansci9020037" target="_blank" title="View Article"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="#" title="Download PDF"><i class="fas fa-download"></i></a>
-                        <a href="#" title="Cite"><i class="fas fa-quote-right"></i></a>
-                    </div>
-                </div>
-                <div class="pub-abstract">
-                    <p>This study examines community kitchen initiatives as a response to food insecurity during the COVID-19 pandemic in the Eastern Cape, South Africa. The research analyzes the effectiveness of community-based food security interventions and their role in building resilience during crisis periods.</p>
-                </div>
-            </div>
-
-            <!-- Publication 2 - 2024 -->
-            <div class="publication-card" data-year="2024" data-keywords="climate change community perceptions disaster resilience volta estuary ghana">
-                <div class="pub-header">
-                    <div class="pub-badge recent">
-                        <i class="fas fa-star"></i> Recent
-                    </div>
-                    <div class="pub-year">2024</div>
-                </div>
-                <h3 class="pub-title">Community perceptions, knowledge, and coping mechanisms concerning perennial climate change-related disasters along the Volta estuary of Ghana, West Africa</h3>
-                <p class="pub-authors">Mattah, M.M., Mattah, P. A., Mensah, A., Adarkwah, F., Mensah, J.& Appeaning Addo, K.</p>
-                <p class="pub-journal">Scientific African, 25, e02333</p>
-                <div class="pub-doi">
-                    DOI: <a href="https://doi.org/10.1016/j.sciaf.2024.e02333" target="_blank">https://doi.org/10.1016/j.sciaf.2024.e02333</a>
-                </div>
-                <div class="pub-actions">
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                    <div class="action-icons">
-                        <a href="https://doi.org/10.1016/j.sciaf.2024.e02333" target="_blank" title="View Article"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="#" title="Download PDF"><i class="fas fa-download"></i></a>
-                        <a href="#" title="Cite"><i class="fas fa-quote-right"></i></a>
-                    </div>
-                </div>
-                <div class="pub-abstract">
-                    <p>This research explores community perceptions and adaptation strategies to climate change-related disasters in Ghana's Volta estuary. The study examines local knowledge systems, coping mechanisms, and community resilience in the face of recurring climate hazards.</p>
-                </div>
-            </div>
-
-            <!-- Publication 3 - 2024 -->
-            <div class="publication-card" data-year="2024" data-keywords="diarrheal disease health climate change coastal communities ghana public health">
-                <div class="pub-header">
-                    <div class="pub-badge recent">
-                        <i class="fas fa-medkit"></i> Health
-                    </div>
-                    <div class="pub-year">2024</div>
-                </div>
-                <h3 class="pub-title">Unraveling diarrheal disease knowledge, understanding, and management practices among climate change vulnerable coastal communities in Ghana</h3>
-                <p class="pub-authors">Agyeman Boafo, Y., Ohemeng, F.N.A., Ayivor, J., Ayitiah, J.A., Yirenya-Tawiah, D., Mensah, A., Datsa, C., Annang, T., & Adom, L.</p>
-                <p class="pub-journal">Frontiers in Public Health, 12, 1352275</p>
-                <div class="pub-doi">
-                    DOI: <a href="https://doi.org/10.3389/fpubh.2024.1352275" target="_blank">https://doi.org/10.3389/fpubh.2024.1352275</a>
-                </div>
-                <div class="pub-actions">
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                    <div class="action-icons">
-                        <a href="https://doi.org/10.3389/fpubh.2024.1352275" target="_blank" title="View Article"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="#" title="Download PDF"><i class="fas fa-download"></i></a>
-                        <a href="#" title="Cite"><i class="fas fa-quote-right"></i></a>
-                    </div>
-                </div>
-                <div class="pub-abstract">
-                    <p>This study investigates community knowledge, attitudes, and practices regarding diarrheal disease management in climate-vulnerable coastal areas of Ghana. The research provides insights into local health management strategies and their effectiveness in the context of climate change impacts.</p>
-                </div>
-            </div>
-
-            <!-- Publication 4 - 2024 -->
-            <div class="publication-card" data-year="2024" data-keywords="indigenous peoples health policy covid food security justice">
-                <div class="pub-header">
-                    <div class="pub-badge">
-                        <i class="fas fa-balance-scale"></i> Policy
-                    </div>
-                    <div class="pub-year">2024</div>
-                </div>
-                <h3 class="pub-title">Justice implications of health and food security policies for Indigenous peoples facing COVID-19: a qualitative study and policy analysis in Peru</h3>
-                <p class="pub-authors">Chicmana-Zapata, V., et al.</p>
-                <p class="pub-journal">Health Policy and Planning, 39 (4), 445 – 445</p>
-                <div class="pub-actions">
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                    <div class="action-icons">
-                        <a href="#" title="View Article"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="#" title="Download PDF"><i class="fas fa-download"></i></a>
-                        <a href="#" title="Cite"><i class="fas fa-quote-right"></i></a>
-                    </div>
-                </div>
-                <div class="pub-abstract">
-                    <p>This qualitative study examines the justice implications of health and food security policies affecting Indigenous peoples during the COVID-19 pandemic in Peru. The research analyzes policy responses and their differential impacts on Indigenous communities.</p>
-                </div>
-            </div>
-
-            <!-- Publication 5 - 2023 -->
-            <div class="publication-card" data-year="2023" data-keywords="coastal vulnerability social factors disaster risk ghana volta estuary">
-                <div class="pub-header">
-                    <div class="pub-badge">
-                        <i class="fas fa-water"></i> Coastal
-                    </div>
-                    <div class="pub-year">2023</div>
-                </div>
-                <h3 class="pub-title">Assessment of social factors that promote the vulnerability of communities to coastal hazards in the Volta estuary in Ghana</h3>
-                <p class="pub-authors">Mattah, M.M., Mattah, P. A., Mensah, A., Babannawo, D., Brempong, E., Mensah, J., Appeaning Addo, K.</p>
-                <p class="pub-journal">International Journal of Disaster Risk Reduction, 95, 103896</p>
-                <div class="pub-doi">
-                    DOI: <a href="https://doi.org/10.1016/j.ijdrr.2023.103896" target="_blank">https://doi.org/10.1016/j.ijdrr.2023.103896</a>
-                </div>
-                <div class="pub-actions">
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                    <div class="action-icons">
-                        <a href="https://doi.org/10.1016/j.ijdrr.2023.103896" target="_blank" title="View Article"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="#" title="Download PDF"><i class="fas fa-download"></i></a>
-                        <a href="#" title="Cite"><i class="fas fa-quote-right"></i></a>
-                    </div>
-                </div>
-                <div class="pub-abstract">
-                    <p>This research assesses social factors contributing to coastal vulnerability in Ghana's Volta estuary. The study identifies key socio-economic determinants that influence community resilience to coastal hazards and disaster risk reduction capacity.</p>
-                </div>
-            </div>
-
-            <!-- Publication 6 - 2023 -->
-            <div class="publication-card" data-year="2023" data-keywords="indigenous knowledge community resilience health emergency preparedness">
-                <div class="pub-header">
-                    <div class="pub-badge">
-                        <i class="fas fa-globe"></i> Global Health
-                    </div>
-                    <div class="pub-year">2023</div>
-                </div>
-                <h3 class="pub-title">Indigenous knowledge, community resilience, and health emergency preparedness</h3>
-                <p class="pub-authors">Zavaleta-Cortijo, C., Ford, J.D., et al.</p>
-                <p class="pub-journal">The Lancet Planetary Health, 7 (8), E641-E643</p>
-                <div class="pub-actions">
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                    <div class="action-icons">
-                        <a href="#" title="View Article"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="#" title="Download PDF"><i class="fas fa-download"></i></a>
-                        <a href="#" title="Cite"><i class="fas fa-quote-right"></i></a>
-                    </div>
-                </div>
-                <div class="pub-abstract">
-                    <p>This commentary explores the role of Indigenous knowledge systems in building community resilience and enhancing health emergency preparedness. The article emphasizes the importance of integrating traditional knowledge with modern health emergency response systems.</p>
-                </div>
-            </div>
-
-            <!-- Publication 7 - 2023 -->
-            <div class="publication-card" data-year="2023" data-keywords="covid policy indigenous peoples sri lanka environmental policy">
-                <div class="pub-header">
-                    <div class="pub-badge">
-                        <i class="fas fa-leaf"></i> Environmental
-                    </div>
-                    <div class="pub-year">2023</div>
-                </div>
-                <h3 class="pub-title">Policy responses to COVID-19 in Sri Lanka and the consideration of Indigenous peoples</h3>
-                <p class="pub-authors">Galappaththi, E. K., et al.</p>
-                <p class="pub-journal">Environmental Science & Policy 144, 110 – 123</p>
-                <div class="pub-doi">
-                    DOI: <a href="https://doi.org/10.1016/j.envsci.2023.03.008" target="_blank">https://doi.org/10.1016/j.envsci.2023.03.008</a>
-                </div>
-                <div class="pub-actions">
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                    <div class="action-icons">
-                        <a href="https://doi.org/10.1016/j.envsci.2023.03.008" target="_blank" title="View Article"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="#" title="Download PDF"><i class="fas fa-download"></i></a>
-                        <a href="#" title="Cite"><i class="fas fa-quote-right"></i></a>
-                    </div>
-                </div>
-                <div class="pub-abstract">
-                    <p>This study analyzes COVID-19 policy responses in Sri Lanka with particular attention to how these policies considered or impacted Indigenous peoples. The research examines the inclusivity and effectiveness of pandemic response measures across different communities.</p>
-                </div>
-            </div>
-
-            <!-- Publication 8 - 2023 -->
-            <div class="publication-card" data-year="2023" data-keywords="heavy metals food safety vegetables health risk assessment ghana">
-                <div class="pub-header">
-                    <div class="pub-badge">
-                        <i class="fas fa-flask"></i> Environmental Health
-                    </div>
-                    <div class="pub-year">2023</div>
-                </div>
-                <h3 class="pub-title">Accumulation of heavy metals and human health risk assessment of vegetable consumption from a farm within the Korle lagoon catchment</h3>
-                <p class="pub-authors">Osae, R., Nukpezah, D., Darko, D.A., Koranteng, S.S., & Mensah, A.</p>
-                <p class="pub-journal">Heliyon 9, e16005</p>
-                <div class="pub-doi">
-                    DOI: <a href="https://doi.org/10.1016/j.heliyon.2023.e16005" target="_blank">https://doi.org/10.1016/j.heliyon.2023.e16005</a>
-                </div>
-                <div class="pub-actions">
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                    <div class="action-icons">
-                        <a href="https://doi.org/10.1016/j.heliyon.2023.e16005" target="_blank" title="View Article"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="#" title="Download PDF"><i class="fas fa-download"></i></a>
-                        <a href="#" title="Cite"><i class="fas fa-quote-right"></i></a>
-                    </div>
-                </div>
-                <div class="pub-abstract">
-                    <p>This study assesses heavy metal contamination in vegetables grown in Ghana's Korle lagoon catchment area and evaluates the associated human health risks. The research provides important insights into food safety and environmental health in urban agricultural systems.</p>
-                </div>
-            </div>
-
-            <!-- Publication 9 - 2022 -->
-            <div class="publication-card" data-year="2022" data-keywords="climate covid interactions planetary health lancet">
-                <div class="pub-header">
-                    <div class="pub-badge">
-                        <i class="fas fa-virus"></i> COVID-Climate
-                    </div>
-                    <div class="pub-year">2022</div>
-                </div>
-                <h3 class="pub-title">Interactions between climate and COVID-19</h3>
-                <p class="pub-authors">Ford, J.D., Zavaleta-Cortijo, C., et al.</p>
-                <p class="pub-journal">The Lancet Planetary Health, 6(10), e825-e833</p>
-                <div class="pub-actions">
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
-                    <div class="action-icons">
-                        <a href="#" title="View Article"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="#" title="Download PDF"><i class="fas fa-download"></i></a>
-                        <a href="#" title="Cite"><i class="fas fa-quote-right"></i></a>
-                    </div>
-                </div>
-                <div class="pub-abstract">
-                    <p>This comprehensive review examines the complex interactions between climate change and COVID-19, exploring how environmental factors influence pandemic outcomes and how pandemic responses affect climate action. The study provides insights into the interconnected nature of health and environmental challenges.</p>
-                </div>
-            </div>
-        </div>
+    <div class="search-box">
+      <i class="fas fa-search search-icon"></i>
+      <input id="search-input" class="search-input" placeholder="Search publications by title, author, keyword..." />
     </div>
 
-    <script>
-        function toggleAbstract(button) {
-            const abstract = button.closest('.publication-card').querySelector('.pub-abstract');
-            const icon = button.querySelector('i');
-            
-            if (abstract.classList.contains('show')) {
-                abstract.classList.remove('show');
-                button.innerHTML = 'Show Abstract <i class="fas fa-chevron-down"></i>';
-            } else {
-                abstract.classList.add('show');
-                button.innerHTML = 'Hide Abstract <i class="fas fa-chevron-up"></i>';
-            }
+    <div class="filter-controls">
+      <div class="filter-option active" data-filter="all">All Publications</div>
+      <select id="year-filter" class="year-select">
+        <option value="all">All Years</option>
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="older">Before 2022</option>
+      </select>
+    </div>
+
+    <div class="publications-list" id="publications-container">
+
+      <!-- Publication 1 - 2025 -->
+      <div class="publication-card" data-year="2025" data-keywords="food insecurity community covid pandemic urban science">
+        <div class="pub-thumbnail">
+  <img src="adel/one.jpg" alt="Publication thumbnail">
+</div>
+        <div class="pub-details">
+          <div class="pub-header">
+            <div class="pub-badge"><i class="fas fa-calendar-alt"></i> Latest</div>
+            <div class="pub-year">2025</div>
+          </div>
+          <h3 class="pub-title">Addressing Food Insecurity Through Community Kitchens During the COVID-19 Pandemic: A Case Study from the Eastern Cape, South Africa</h3>
+          <p class="pub-authors">Bezerra, J.C. et al.</p>
+          <p class="pub-journal">Urban Science, 9(2)</p>
+          <div class="pub-doi">DOI: <a href="https://doi.org/10.3390/urbansci9020037" target="_blank">10.3390/urbansci9020037</a></div>
+          <div class="pub-actions">
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
+            <div class="action-icons">
+              <a href="https://doi.org/10.3390/urbansci9020037" target="_blank" title="View article"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://www.mdpi.com/2413-8851/9/2/37/pdf?version=1739172360" title="Download PDF"><i class="fas fa-download"></i></a>
+              <a href="adel/one.ris" title="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+          </div>
+          <div class="pub-abstract"><p>This study examines community kitchen initiatives as a response to food insecurity during the COVID-19 pandemic in the Eastern Cape, South Africa. The research analyzes the effectiveness of community-based food security interventions and their role in building resilience during crisis periods.</p></div>
+        </div>
+      </div>
+
+      <!-- Publication 2 - 2024 -->
+      <div class="publication-card" data-year="2024" data-keywords="climate change community perceptions disaster resilience volta estuary ghana">
+       <div class="pub-thumbnail">
+  <img src="adel/two.jpg" alt="Publication thumbnail">
+</div>
+
+        <div class="pub-details">
+          <div class="pub-header">
+            <div class="pub-badge"><i class="fas fa-star"></i> Recent</div>
+            <div class="pub-year">2024</div>
+          </div>
+          <h3 class="pub-title">Community perceptions, knowledge, and coping mechanisms concerning perennial climate change-related disasters along the Volta estuary of Ghana, West Africa</h3>
+          <p class="pub-authors">Mattah, M.M., Mattah, P. A., Mensah, A., Adarkwah, F., Mensah, J. & Appeaning Addo, K.</p>
+          <p class="pub-journal">Scientific African, 25, e02333</p>
+          <div class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.sciaf.2024.e02333" target="_blank">10.1016/j.sciaf.2024.e02333</a></div>
+          <div class="pub-actions">
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
+            <div class="action-icons">
+              <a href="https://doi.org/10.1016/j.sciaf.2024.e02333" target="_blank" title="View article"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://www.sciencedirect.com/science/article/pii/S246822762400276X/pdfft?md5=04769265852029a877a5cd1d5aa1dc64&pid=1-s2.0-S246822762400276X-main.pdf" title="Download PDF"><i class="fas fa-download"></i></a>
+              <a href="adel/two.ris" title="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+          </div>
+          <div class="pub-abstract"><p>This research explores community perceptions and adaptation strategies to climate change-related disasters in Ghana's Volta estuary. The study examines local knowledge systems, coping mechanisms, and community resilience in the face of recurring climate hazards.</p></div>
+        </div>
+      </div>
+
+      <!-- Publication 3 - 2024 -->
+      <div class="publication-card" data-year="2024" data-keywords="diarrheal disease health climate change coastal communities ghana public health">
+        <div class="pub-thumbnail">
+  <img src="adel/three.jpg" alt="Publication thumbnail">
+</div>
+
+        <div class="pub-details">
+          <div class="pub-header">
+            <div class="pub-badge"><i class="fas fa-medkit"></i> Health</div>
+            <div class="pub-year">2024</div>
+          </div>
+          <h3 class="pub-title">Unraveling diarrheal disease knowledge, understanding, and management practices among climate change vulnerable coastal communities in Ghana</h3>
+          <p class="pub-authors">Agyeman Boafo, Y., Ohemeng, F.N.A., Ayivor, J., Ayitiah, J.A., Yirenya-Tawiah, D., Mensah, A., Datsa, C., Annang, T., & Adom, L.</p>
+          <p class="pub-journal">Frontiers in Public Health, 12, 1352275</p>
+          <div class="pub-doi">DOI: <a href="https://doi.org/10.3389/fpubh.2024.1352275" target="_blank">10.3389/fpubh.2024.1352275</a></div>
+          <div class="pub-actions">
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
+            <div class="action-icons">
+              <a href="https://doi.org/10.3389/fpubh.2024.1352275" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://public-pages-files-2025.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2024.1352275/pdf" title="Download PDF"><i class="fas fa-download"></i></a>
+              <a href="adel/three.ris" title="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+          </div>
+          <div class="pub-abstract"><p>This study investigates community knowledge, attitudes, and practices regarding diarrheal disease management in climate-vulnerable coastal areas of Ghana. The research provides insights into local health management strategies and their effectiveness in the context of climate change impacts.</p></div>
+        </div>
+      </div>
+
+      <!-- Publication 4 - 2024 -->
+      <div class="publication-card" data-year="2024" data-keywords="indigenous peoples health policy covid food security justice peru">
+        <div class="pub-thumbnail">
+  <img src="adel/four.jpg" alt="Publication thumbnail">
+</div>
+
+        <div class="pub-details">
+          <div class="pub-header">
+            <div class="pub-badge"><i class="fas fa-balance-scale"></i> Policy</div>
+            <div class="pub-year">2024</div>
+          </div>
+          <h3 class="pub-title">Justice implications of health and food security policies for Indigenous peoples facing COVID-19: a qualitative study and policy analysis in Peru</h3>
+          <p class="pub-authors">Chicmana-Zapata, V., et al.</p>
+          <p class="pub-journal">Health Policy and Planning, 39 (4), 445 – 445</p>
+          <div class="pub-actions">
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
+            <div class="action-icons">
+              <a href="https://academic.oup.com/heapol/article/38/Supplement_2/ii36/7424485" title="View article"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://academic.oup.com/heapol/article-pdf/38/Supplement_2/ii36/58477785/czad051.pdf" title="Download PDF"><i class="fas fa-download"></i></a>
+              <a href="adel/four.ris" title="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+          </div>
+          <div class="pub-abstract"><p>This qualitative study examines the justice implications of health and food security policies affecting Indigenous peoples during the COVID-19 pandemic in Peru. The research analyzes policy responses and their differential impacts on Indigenous communities.</p></div>
+        </div>
+      </div>
+
+      <!-- Publication 5 - 2023 -->
+      <div class="publication-card" data-year="2023" data-keywords="coastal vulnerability social factors disaster risk ghana volta estuary">
+         <div class="pub-thumbnail">
+  <img src="adel/five.jpg" alt="Publication thumbnail">
+</div>
+
+        <div class="pub-details">
+          <div class="pub-header">
+            <div class="pub-badge"><i class="fas fa-water"></i> Coastal</div>
+            <div class="pub-year">2023</div>
+          </div>
+          <h3 class="pub-title">Assessment of social factors that promote the vulnerability of communities to coastal hazards in the Volta estuary in Ghana</h3>
+          <p class="pub-authors">Mattah, M.M., Mattah, P. A., Mensah, A., Babannawo, D., Brempong, E., Mensah, J., Appeaning Addo, K.</p>
+          <p class="pub-journal">International Journal of Disaster Risk Reduction, 95, 103896</p>
+          <div class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.ijdrr.2023.103896" target="_blank">10.1016/j.ijdrr.2023.103896</a></div>
+          <div class="pub-actions">
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
+            <div class="action-icons">
+              <a href="https://doi.org/10.1016/j.ijdrr.2023.103896" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://www.sciencedirect.com/getaccess/pii/S221242092300376X/purchase" title="Download PDF"><i class="fas fa-download"></i></a>
+              <a href="adel/five.ris" title="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+          </div>
+          <div class="pub-abstract"><p>This research assesses social factors contributing to coastal vulnerability in Ghana's Volta estuary. The study identifies key socio-economic determinants that influence community resilience to coastal hazards and disaster risk reduction capacity.</p></div>
+        </div>
+      </div>
+
+      <!-- Publication 6 - 2023 -->
+      <div class="publication-card" data-year="2023" data-keywords="indigenous knowledge community resilience health emergency preparedness">
+          <div class="pub-thumbnail">
+  <img src="adel/six.jpg" alt="Publication thumbnail">
+</div>
+        <div class="pub-details">
+          <div class="pub-header">
+            <div class="pub-badge"><i class="fas fa-globe"></i> Global Health</div>
+            <div class="pub-year">2023</div>
+          </div>
+          <h3 class="pub-title">Indigenous knowledge, community resilience, and health emergency preparedness</h3>
+          <p class="pub-authors">Zavaleta-Cortijo, C., Ford, J.D., et al.</p>
+          <p class="pub-journal">The Lancet Planetary Health, 7 (8), E641-E643</p>
+          <div class="pub-actions">
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
+            <div class="action-icons">
+              <a href="https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(23)00140-7" title="View article"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://www.thelancet.com/action/showPdf?pii=S2542-5196%2823%2900140-7" title="Download PDF"><i class="fas fa-download"></i></a>
+              <a href="adel/six.ris" title="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+          </div>
+          <div class="pub-abstract"><p>This commentary explores the role of Indigenous knowledge systems in building community resilience and enhancing health emergency preparedness. The article emphasizes the importance of integrating traditional knowledge with modern health emergency response systems.</p></div>
+        </div>
+      </div>
+
+      <!-- Publication 7 - 2023 -->
+      <div class="publication-card" data-year="2023" data-keywords="covid policy indigenous peoples sri lanka environmental policy">
+        <div class="pub-thumbnail">
+  <img src="adel/seven.jpg" alt="Publication thumbnail">
+</div>
+        <div class="pub-details">
+          <div class="pub-header">
+            <div class="pub-badge"><i class="fas fa-leaf"></i> Environmental</div>
+            <div class="pub-year">2023</div>
+          </div>
+          <h3 class="pub-title">Policy responses to COVID-19 in Sri Lanka and the consideration of Indigenous peoples</h3>
+          <p class="pub-authors">Galappaththi, E. K., et al.</p>
+          <p class="pub-journal">Environmental Science & Policy 144, 110 – 123</p>
+          <div class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.envsci.2023.03.008" target="_blank">10.1016/j.envsci.2023.03.008</a></div>
+          <div class="pub-actions">
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
+            <div class="action-icons">
+              <a href="https://doi.org/10.1016/j.envsci.2023.03.008" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://www.sciencedirect.com/science/article/pii/S1462901123000783/pdfft?md5=a96931e652343acb813fdc1480da466a&pid=1-s2.0-S1462901123000783-main.pdf" title="Download PDF"><i class="fas fa-download"></i></a>
+              <a href="adel/seven.ris" title="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+          </div>
+          <div class="pub-abstract"><p>This study analyzes COVID-19 policy responses in Sri Lanka with particular attention to how these policies considered or impacted Indigenous peoples. The research examines the inclusivity and effectiveness of pandemic response measures across different communities.</p></div>
+        </div>
+      </div>
+
+      <!-- Publication 8 - 2023 -->
+      <div class="publication-card" data-year="2023" data-keywords="heavy metals food safety vegetables health risk assessment ghana korle lagoon">
+          <div class="pub-thumbnail">
+  <img src="adel/eight.jpg" alt="Publication thumbnail">
+</div>
+        <div class="pub-details">
+          <div class="pub-header">
+            <div class="pub-badge"><i class="fas fa-flask"></i> Environmental Health</div>
+            <div class="pub-year">2023</div>
+          </div>
+          <h3 class="pub-title">Accumulation of heavy metals and human health risk assessment of vegetable consumption from a farm within the Korle lagoon catchment</h3>
+          <p class="pub-authors">Osae, R., Nukpezah, D., Darko, D.A., Koranteng, S.S., & Mensah, A.</p>
+          <p class="pub-journal">Heliyon 9, e16005</p>
+          <div class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.heliyon.2023.e16005" target="_blank">10.1016/j.heliyon.2023.e16005</a></div>
+          <div class="pub-actions">
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
+            <div class="action-icons">
+              <a href="https://doi.org/10.1016/j.heliyon.2023.e16005" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://www.cell.com/action/showPdf?pii=S2405-8440%2823%2903212-7" title="Download PDF"><i class="fas fa-download"></i></a>
+              <a href="adel/eight.ris" title="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+          </div>
+          <div class="pub-abstract"><p>This study assesses heavy metal contamination in vegetables grown in Ghana's Korle lagoon catchment area and evaluates the associated human health risks. The research provides important insights into food safety and environmental health in urban agricultural systems.</p></div>
+        </div>
+      </div>
+
+      <!-- Publication 9 - 2022 -->
+      <div class="publication-card" data-year="2022" data-keywords="climate covid interactions planetary health lancet">
+          <div class="pub-thumbnail">
+  <img src="adel/nine.jpg" alt="Publication thumbnail">
+</div> <div class="pub-details">
+          <div class="pub-header">
+            <div class="pub-badge"><i class="fas fa-virus"></i> COVID-Climate</div>
+            <div class="pub-year">2022</div>
+          </div>
+          <h3 class="pub-title">Interactions between climate and COVID-19</h3>
+          <p class="pub-authors">Ford, J.D., Zavaleta-Cortijo, C., et al.</p>
+          <p class="pub-journal">The Lancet Planetary Health, 6(10), e825-e833</p>
+          <div class="pub-actions">
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract <i class="fas fa-chevron-down"></i></button>
+            <div class="action-icons">
+              <a href="https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(22)00174-7" title="View article"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://www.thelancet.com/action/showPdf?pii=S2542-5196%2822%2900174-7" title="Download PDF"><i class="fas fa-download"></i></a>
+              <a href="adel/nine.ris" title="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+          </div>
+          <div class="pub-abstract"><p>This comprehensive review examines the complex interactions between climate change and COVID-19, exploring how environmental factors influence pandemic outcomes and how pandemic responses affect climate action.</p></div>
+        </div>
+      </div>
+
+     
+
+    
+
+     
+
+    </div>
+  </div>
+
+  <script>
+    function toggleAbstract(button) {
+      const card = button.closest('.publication-card');
+      const abstract = card.querySelector('.pub-abstract');
+      if (abstract.classList.contains('show')) {
+        abstract.classList.remove('show');
+        button.innerHTML = 'Show Abstract <i class="fas fa-chevron-down"></i>';
+      } else {
+        abstract.classList.add('show');
+        button.innerHTML = 'Hide Abstract <i class="fas fa-chevron-up"></i>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterOptions = document.querySelectorAll('.filter-option');
+      const yearSelect = document.getElementById('year-filter');
+      const searchInput = document.getElementById('search-input');
+      const publicationCards = Array.from(document.querySelectorAll('.publication-card'));
+
+      function updateStats() {
+        const visible = publicationCards.filter(c => c.style.display !== 'none' && c.style.display !== '');
+        document.getElementById('total-pubs').textContent = visible.length;
+        const recentCount = visible.filter(c => parseInt(c.dataset.year) >= 2022).length;
+        document.getElementById('recent-pubs').textContent = recentCount;
+      }
+
+      // initial stats
+      updateStats();
+
+      filterOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          filterOptions.forEach(o => o.classList.remove('active'));
+          this.classList.add('active');
+          filterPublications(this.dataset.filter);
+        });
+      });
+
+      yearSelect.addEventListener('change', function() {
+        filterPublications(this.value);
+        filterOptions.forEach(o => o.classList.remove('active'));
+      });
+
+      searchInput.addEventListener('input', function() {
+        const term = this.value.trim().toLowerCase();
+        publicationCards.forEach(card => {
+          const title = card.querySelector('.pub-title').textContent.toLowerCase();
+          const authors = card.querySelector('.pub-authors').textContent.toLowerCase();
+          const journal = card.querySelector('.pub-journal').textContent.toLowerCase();
+          const keywords = (card.dataset.keywords || '').toLowerCase();
+          const abstract = (card.querySelector('.pub-abstract')?.textContent || '').toLowerCase();
+          const match = title.includes(term) || authors.includes(term) || journal.includes(term) || keywords.includes(term) || abstract.includes(term);
+          card.style.display = match || term === '' ? 'flex' : 'none';
+        });
+        updateStats();
+      });
+
+      function filterPublications(filter) {
+        publicationCards.forEach(card => {
+          const year = card.dataset.year;
+          let show = false;
+          if (filter === 'all') show = true;
+          else if (filter === 'older') show = parseInt(year) < 2022;
+          else show = year === filter;
+          card.style.display = show ? 'flex' : 'none';
+        });
+        updateStats();
+      }
+
+      // Make initial animations
+      publicationCards.forEach((card, i) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(18px)';
+        card.style.transition = 'all 0.5s ease';
+        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 80 * i);
+      });
+
+      // Escape key closes abstracts
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.pub-abstract.show').forEach(a => {
+            a.classList.remove('show');
+            const btn = a.closest('.publication-card').querySelector('.abstract-toggle');
+            if (btn) btn.innerHTML = 'Show Abstract <i class="fas fa-chevron-down"></i>';
+          });
         }
+      });
 
-        // Filter functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterOptions = document.querySelectorAll('.filter-option');
-            const yearSelect = document.getElementById('year-filter');
-            const searchInput = document.getElementById('search-input');
-            const publicationCards = document.querySelectorAll('.publication-card');
+    });
+  </script>
 
-            // Filter by year buttons
-            filterOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    // Remove active class from all options
-                    filterOptions.forEach(opt => opt.classList.remove('active'));
-                    // Add active class to clicked option
-                    this.classList.add('active');
-                    
-                    const filterValue = this.dataset.filter;
-                    filterPublications(filterValue);
-                });
-            });
-
-            // Year select dropdown
-            yearSelect.addEventListener('change', function() {
-                const selectedYear = this.value;
-                filterPublications(selectedYear);
-                
-                // Update active button
-                filterOptions.forEach(opt => opt.classList.remove('active'));
-                if (selectedYear === 'all') {
-                    document.querySelector('[data-filter="all"]').classList.add('active');
-                } else {
-                    // Find matching button or keep current selection
-                    const matchingButton = document.querySelector(`[data-filter="${selectedYear}"]`);
-                    if (matchingButton) {
-                        matchingButton.classList.add('active');
-                    }
-                }
-            });
-
-            // Search functionality
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
-                searchPublications(searchTerm);
-            });
-
-            function filterPublications(filter) {
-                publicationCards.forEach(card => {
-                    const year = card.dataset.year;
-                    let shouldShow = false;
-
-                    if (filter === 'all') {
-                        shouldShow = true;
-                    } else if (filter === 'older') {
-                        shouldShow = parseInt(year) < 2022;
-                    } else {
-                        shouldShow = year === filter;
-                    }
-
-                    if (shouldShow) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(-20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-
-                updateStats();
-            }
-
-            function searchPublications(searchTerm) {
-                publicationCards.forEach(card => {
-                    const title = card.querySelector('.pub-title').textContent.toLowerCase();
-                    const authors = card.querySelector('.pub-authors').textContent.toLowerCase();
-                    const journal = card.querySelector('.pub-journal').textContent.toLowerCase();
-                    const keywords = card.dataset.keywords.toLowerCase();
-                    const abstract = card.querySelector('.pub-abstract p').textContent.toLowerCase();
-
-                    const isMatch = title.includes(searchTerm) || 
-                                  authors.includes(searchTerm) || 
-                                  journal.includes(searchTerm) || 
-                                  keywords.includes(searchTerm) ||
-                                  abstract.includes(searchTerm);
-
-                    if (isMatch) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(-20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-
-                updateStats();
-            }
-
-            function updateStats() {
-                const visibleCards = Array.from(publicationCards).filter(card => 
-                    card.style.display !== 'none'
-                );
-                
-                const totalVisible = visibleCards.length;
-                const recentVisible = visibleCards.filter(card => 
-                    parseInt(card.dataset.year) >= 2022
-                ).length;
-
-                document.getElementById('total-pubs').textContent = totalVisible;
-                document.getElementById('recent-pubs').textContent = recentVisible;
-            }
-
-            // Initialize stats
-            updateStats();
-
-            // Add smooth scrolling and entrance animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Initially hide cards for animation
-            publicationCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'all 0.6s ease';
-                observer.observe(card);
-            });
-
-            // Stagger the initial animation
-            publicationCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-        });
-
-        // Add keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                // Close all open abstracts
-                document.querySelectorAll('.pub-abstract.show').forEach(abstract => {
-                    abstract.classList.remove('show');
-                    const button = abstract.closest('.publication-card').querySelector('.abstract-toggle');
-                    button.innerHTML = 'Show Abstract <i class="fas fa-chevron-down"></i>';
-                });
-            }
-        });
-
-        // Add smooth scroll behavior for better UX
-        document.documentElement.style.scrollBehavior = 'smooth';
-    </script>
-
-      
-        
+ 
         <!-- Profile Links Section -->
         <div class="profile-links">
             <h2>Academic Profiles</h2>
@@ -995,10 +846,10 @@
               </div>
             </div>
             <div class="learn-more-section">
-              <a href="https://scholar.google.com/citations?hl=en&user=wLG5P3IAAAAJ&view_op=list_works&citft=1&citft=2&citft=3&email_for_op=ansprin0%40gmail.com&gmla=AH8HC4yq6Ou7Hyl2F24jr1wyEMklvQMjXV3OACfm5EbgiuIUOpcDsj6BIBdGW2wooPEHqzqdk2_-As7jRFWhgpeq3RyRcCXJ2RQI58J9G047tIxTutSpxThFrv3rSsnUQpIjmgajaBQ8hzCOaXXMU344aerGu2Thahq12-pNsJfYKbpEJjIzHfiVK8hVdNgzyxkYwpQJUtYG5LLYjgw0j8zn_vlvdaBURaVPo710W0mTeQ" class="learn-more-btn">Learn More</a>
+              <a href="https://ug-gh.academia.edu/AdelinaMensah" class="learn-more-btn">Learn More</a>
             </div>
         </div>
-      </section>
+      </section> 
 
     <!-- Testimonials -->
 
@@ -1060,6 +911,7 @@
 </div>
     </div>
     <script src="js/whatsapp.js"></script>
+    </body>
 
       <!-- Footer -->
     <footer>
@@ -1085,175 +937,7 @@
             <p>&copy; 2025 Dr. Adelina Mensah. All Rights Reserved.</p>
         </div>
     </footer>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize charts
-            initPublicationChart();
-            initCitationChart();
-            
-            // Set up abstract toggle functionality
-            const toggleButtons = document.querySelectorAll('.abstract-toggle');
-            toggleButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const abstract = this.closest('.publication-card').querySelector('.pub-abstract');
-                    abstract.classList.toggle('expanded');
-                    
-                    if (abstract.classList.contains('expanded')) {
-                        this.innerHTML = 'Hide Abstract <i class="fas fa-chevron-up"></i>';
-                    } else {
-                        this.innerHTML = 'Show Abstract <i class="fas fa-chevron-down"></i>';
-                    }
-                });
-            });
-            
-            // Set up filter options
-            const filterOptions = document.querySelectorAll('.filter-option');
-            const journalSelect = document.getElementById('journal-filter');
-            const publications = document.querySelectorAll('.publication-card');
-            const currentYear = new Date().getFullYear();
-            
-            // Publication filtering function
-            function filterPublications() {
-                const activeFilter = document.querySelector('.filter-option.active').dataset.filter;
-                const journalFilter = journalSelect.value;
-                
-                publications.forEach(pub => {
-                    const pubYear = parseInt(pub.dataset.year);
-                    const isHighlyCited = pub.dataset.highlyCited === 'true';
-                    const pubJournal = pub.dataset.journal;
-                    
-                    let show = true;
-                    
-                    // Apply filter based on selected option
-                    if (activeFilter === 'last5' && pubYear < currentYear - 4) {
-                        show = false;
-                    } else if (activeFilter === 'highly-cited' && !isHighlyCited) {
-                        show = false;
-                    }
-                    
-                    // Apply journal filter
-                    if (journalFilter !== 'all' && pubJournal !== journalFilter) {
-                        show = false;
-                    }
-                    
-                    // Toggle visibility
-                    if (show) {
-                        pub.style.display = 'block';
-                        setTimeout(() => {
-                            pub.style.opacity = '1';
-                        }, 50);
-                    } else {
-                        pub.style.opacity = '0';
-                        setTimeout(() => {
-                            pub.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            }
-            
-            // Add event listeners to filter buttons
-            filterOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    filterOptions.forEach(opt => opt.classList.remove('active'));
-                    this.classList.add('active');
-                    filterPublications();
-                });
-            });
-            
-            // Add event listener to journal select
-            journalSelect.addEventListener('change', filterPublications);
-            
-            // Animate metrics counting up
-            animateValue('citation-count', 0, 1036, 2000);
-            animateValue('h-index', 0, 16, 1500);
-            animateValue('i10-index', 0, 21, 1800);
-        });
-        
-        function initPublicationChart() {
-            const chart = document.getElementById('yearly-publications-chart');
-            const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
-            const pubs = [2, 4, 3, 5, 6, 4, 7, 5];
-            
-            // Clear any existing content
-            chart.innerHTML = '';
-            
-            // Find max value for scaling
-            const maxPubs = Math.max(...pubs);
-            
-            // Create bars
-            years.forEach((year, i) => {
-                const bar = document.createElement('div');
-                bar.className = 'chart-bar';
-                bar.style.height = `${(pubs[i] / maxPubs) * 90}%`;
-                bar.setAttribute('data-year', year);
-                
-                // Add value label at top of bar
-                const valueLabel = document.createElement('div');
-                valueLabel.className = 'chart-value';
-                valueLabel.textContent = pubs[i];
-                
-                bar.appendChild(valueLabel);
-                chart.appendChild(bar);
-                
-                // Animate in
-                setTimeout(() => {
-                    bar.style.height = `${(pubs[i] / maxPubs) * 90}%`;
-                }, i * 150);
-            });
-        }
-        
-        function initCitationChart() {
-            const chart = document.getElementById('citation-impact-chart');
-            const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
-            const citations = [80, 120, 95, 150, 180, 200, 220, 110];
-            
-            // Clear any existing content
-            chart.innerHTML = '';
-            
-            // Find max value for scaling
-            const maxCitations = Math.max(...citations);
-            
-            // Create bars
-            years.forEach((year, i) => {
-                const bar = document.createElement('div');
-                bar.className = 'chart-bar';
-                bar.style.height = '0%';
-                bar.style.background = 'linear-gradient(to top, var(--secondary), #8de9e4)';
-                bar.setAttribute('data-year', year);
-                
-                // Add value label at top of bar
-                const valueLabel = document.createElement('div');
-                valueLabel.className = 'chart-value';
-                valueLabel.textContent = citations[i];
-                
-                bar.appendChild(valueLabel);
-                chart.appendChild(bar);
-                
-                // Animate in
-                setTimeout(() => {
-                    bar.style.height = `${(citations[i] / maxCitations) * 90}%`;
-                }, i * 150);
-            });
-        }
-        
-        function animateValue(id, start, end, duration) {
-            const element = document.getElementById(id);
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                element.textContent = value.toLocaleString();
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-    </script>
-     <script>
+ <script>
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -1304,16 +988,13 @@
         // Typed.js for hero section
         const typed = new Typed('#typed', {
             strings: [
-                'Climate Change Adaptation Specialist',
-                'Ecosystem Management Researcher',
-                'Environmental Policy Advisor',
-                'Sustainability Science Expert',
-                'Educator & Mentor'
+                '"A woman’s lead in science is a planet’s hope in action"'
             ],
             typeSpeed: 50,
             backSpeed: 30,
             loop: true,
             backDelay: 2000,
+            style:"font-family",
             showCursor: false,
             cursorChar: '|'
         });
@@ -1333,5 +1014,4 @@
             });
         });
     </script>
-</body>
 </html>
