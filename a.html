@@ -1,0 +1,129 @@
+<!-- Enhanced Hero Section with 10 Animation Styles -->
+ <section class="hero" id="home">
+    <div class="carousel-container">
+         
+    </div>
+
+    <div class="hero-content" > 
+        <div class="hero-text">
+            <h1 style="font-size: 60px" class="typed-text" id="typed"></span></h1>
+            <div class="btn-container">
+                <a href="#contact" class="btn">        
+                    <div>Dr. Adelina Mensah</div>
+                </a>
+            </div>
+        </div>
+    </div>    
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // All slides metadata
+    const allSlides = [
+        { class: 'slide-1 slide-desktop', image: 'img/a.JPG', animation: 'diagonalSlideIn' },
+        { class: 'slide-2 slide-mobile', image: 'img/b.JPG', animation: 'boxPuzzle' },
+        { class: 'slide-4 slide-desktop', image: 'img/c.JPG', animation: 'waterSplash' },
+        { class: 'slide-5 slide-desktop', image: 'img/d.JPG', animation: 'cancellationEffect' },
+        { class: 'slide-6 slide-mobile', image: 'img/e.JPG', animation: 'glitchEffect' },
+        { class: 'slide-7 slide-mobile', image: 'img/f.JPG', animation: 'treeDrawing' },
+        { class: 'slide-8 slide-mobile', image: 'img/j.JPG', animation: 'blindsEffect' },
+        { class: 'slide-9 slide-mobile', image: 'img/l.JPG', animation: 'swirlEffect' },
+        { class: 'slide-10 slide-mobile', image: 'img/i.JPG', animation: 'foldEffect' }
+    ];
+
+    const container = document.querySelector('.carousel-container');
+    let currentSlides = [];
+    let currentIndex = 0;
+    let slideInterval;
+
+    // Initialize carousel and create slides dynamically
+    function initializeCarousel() {
+        container.innerHTML = '';
+        currentSlides = [];
+        const isMobile = window.innerWidth <= 999;
+
+        allSlides.forEach(slideData => {
+            if ((isMobile && slideData.class.includes('slide-mobile')) ||
+                (!isMobile && slideData.class.includes('slide-desktop'))) {
+                
+                const slide = document.createElement('div');
+                slide.className = `carousel-slide ${slideData.class}`;
+                slide.dataset.image = slideData.image; // store image for lazy load
+                slide.dataset.animation = slideData.animation;
+                container.appendChild(slide);
+                currentSlides.push(slide);
+            }
+        });
+
+        if (currentSlides.length > 0) {
+            setupLazyLoading(currentSlides); // <== integrate lazy loading here
+            showSlide(0);
+            startCarousel();
+        }
+    }
+
+    // Lazy-loading logic
+    function setupLazyLoading(slides) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const slide = entry.target;
+                    const imageUrl = slide.dataset.image;
+                    if (imageUrl) {
+                        const img = new Image();
+                        img.src = imageUrl;
+                        img.onload = () => {
+                            slide.style.backgroundImage = `url(${imageUrl})`;
+                            slide.style.opacity = '1';
+                            slide.removeAttribute('data-image');
+                        };
+                        obs.unobserve(slide);
+                    }
+                }
+            });
+        }, {
+            rootMargin: '300px 0px', // preload a bit before entering view
+            threshold: 0.01
+        });
+
+        slides.forEach(slide => {
+            slide.style.opacity = '0'; // hidden until loaded
+            slide.style.transition = 'opacity 0.6s ease-in-out';
+            observer.observe(slide);
+        });
+    }
+
+    // Show a specific slide
+    function showSlide(index) {
+        currentSlides.forEach(slide => {
+            slide.classList.remove('active');
+            slide.style.display = 'none';
+        });
+
+        const currentSlide = currentSlides[index];
+        if (currentSlide) {
+            currentSlide.style.display = 'block';
+            currentSlide.classList.add('active');
+            void currentSlide.offsetWidth; // trigger reflow for animation
+        }
+    }
+
+    // Move to next slide
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % currentSlides.length;
+        showSlide(currentIndex);
+    }
+
+    // Start carousel rotation
+    function startCarousel() {
+        if (slideInterval) clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Initialize once on load
+    initializeCarousel();
+
+    // Rebuild carousel on resize
+    window.addEventListener('resize', initializeCarousel);
+});
+</script>
